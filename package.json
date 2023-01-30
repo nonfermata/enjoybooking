@@ -1,11 +1,11 @@
 {
-    "name": "my-bookings",
+    "name": "enjoy-booking",
     "version": "0.1.0",
     "description": "The application for booking hotel rooms",
     "author": "Dima Baulin <nonfermata@gmail.com>",
     "main": "index.js",
     "private": true,
-    "homepage": "https://nonfermata.github.io/my-bookings/",
+    "homepage": "https://nonfermata.github.io/enjoy-booking/",
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.1",
         "@testing-library/jest-dom": "^5.16.5",
