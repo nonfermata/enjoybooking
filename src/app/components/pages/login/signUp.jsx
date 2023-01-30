@@ -191,8 +191,7 @@ const SignUp = () => {
                     name="licence"
                     value={data.licence}
                     onChange={handleChangeData}
-                    error={errors.licence}
-                >
+                    error={errors.licence}>
                     <span>
                         Подтверждаю согласие с условиями{" "}
                         <a className={classes.licence}>
@@ -200,10 +199,7 @@ const SignUp = () => {
                         </a>
                     </span>
                 </CheckBoxField>
-                <Button
-                    color="blue"
-                    disabled={!isValid}
-                >
+                <Button color="blue" disabled={!isValid}>
                     Зарегистрироваться
                 </Button>
             </div>

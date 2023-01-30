@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../../../hooks/useAuth";
 import classes from "./profileBlock.module.css";
 import ProfileMenu from "./profileMenu/profileMenu";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
-const ProfileBlock = ({ onMainClick }) => {
+const ProfileBlock = () => {
+    const onAppClick = useSelector((state) => state.onAppClick);
     const { currentUser } = useAuth();
     const [blockStyle, setBlockStyle] = useState({
         backgroundColor: "var(--profile-bg-color)"
@@ -20,14 +20,13 @@ const ProfileBlock = ({ onMainClick }) => {
     useEffect(() => {
         setIsMenu(false);
         setBlockStyle({});
-    }, [onMainClick]);
+    }, [onAppClick]);
     return (
         <div className={classes.profileBlockWrap}>
             <div
                 className={classes.profileBlock}
                 style={blockStyle}
-                onClick={handleMenuStatus}
-            >
+                onClick={handleMenuStatus}>
                 <img
                     className={classes.icon}
                     src={currentUser.image}
@@ -39,12 +38,5 @@ const ProfileBlock = ({ onMainClick }) => {
         </div>
     );
 };
-ProfileBlock.propTypes = {
-    onMainClick: PropTypes.bool
-};
 
-const mapStateToProps = ({ onMainClick }) => ({
-    onMainClick
-});
-
-export default connect(mapStateToProps)(ProfileBlock);
+export default ProfileBlock;

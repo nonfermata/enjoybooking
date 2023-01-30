@@ -23,8 +23,7 @@ const RadioField = ({ label, options, name, onChange, value }) => {
                         />
                         <label
                             className={classes.radioLabel}
-                            htmlFor={option.name + "_" + option.value}
-                        >
+                            htmlFor={option.name + "_" + option.value}>
                             {option.name}
                         </label>
                     </div>

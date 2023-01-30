@@ -12,8 +12,7 @@ const Button = ({ children, color, disabled, onClick }) => {
                 (disabled ? " " + classes.btnDisabled : "")
             }
             disabled={disabled}
-            onClick={onClick}
-        >
+            onClick={onClick}>
             {children}
         </button>
     );

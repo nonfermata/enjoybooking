@@ -4,7 +4,7 @@ import { getMonths, getPossibleStartDate } from "../../../utils/renderCalendar";
 import classes from "./dateChoice.module.css";
 import PropTypes from "prop-types";
 import MonthBlock from "./monthBlock";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import moment from "moment";
 import "moment/locale/ru";
 
@@ -16,12 +16,22 @@ const DateChoice = ({
     onSetDate,
     checkInDate,
     checkOutDate,
-    onMainClick,
     activeCalendar,
     activateCalendar,
     occupiedDates,
     isStaticCheckIn
 }) => {
+    const onAppClick = useSelector((state) => state.onAppClick);
+    const [monthPosition, setMonthPosition] = useState(0);
+    const [showCalendar, setShowCalendar] = useState(false);
+    useEffect(() => {
+        if (activeCalendar !== choiceName) {
+            setShowCalendar(false);
+        }
+    }, [activeCalendar]);
+    useEffect(() => {
+        setShowCalendar(false);
+    }, [onAppClick]);
     let choiceValueString, dateClass;
     if (!choiceValue) {
         dateClass = classes.choiceInitial;
@@ -43,8 +53,6 @@ const DateChoice = ({
     const currentMonthFirstDay = Date.parse(
         new Date(dateNow.getFullYear(), dateNow.getMonth(), 1)
     );
-    const [monthPosition, setMonthPosition] = useState(0);
-    const [showCalendar, setShowCalendar] = useState(false);
 
     const getImpossibleDates = () => {
         const arr = [
@@ -65,10 +73,12 @@ const DateChoice = ({
                     1
                 )
             );
-            arr.push({
-                from: nearestBooking.checkIn + addedDay,
-                to: lastDate
-            });
+            if (nearestBooking) {
+                arr.push({
+                    from: nearestBooking.checkIn + addedDay,
+                    to: lastDate
+                });
+            }
         } else {
             occupiedDates.forEach((item) => {
                 arr.push({
@@ -107,44 +117,30 @@ const DateChoice = ({
     const handleMovePosition = (direction) => {
         setMonthPosition((prevState) => prevState + 230 * direction);
     };
-    useEffect(() => {
-        if (activeCalendar !== choiceName) {
-            setShowCalendar(false);
-        }
-    }, [activeCalendar]);
-    useEffect(() => {
-        setShowCalendar(false);
-    }, [onMainClick]);
+
     const handleChoice = () => {
         activateCalendar(choiceName);
         setShowCalendar((prevState) => !prevState);
     };
     return (
         <div className={classes.choiceWrap}>
-            <div
-                className={dateClass}
-                onClick={handleChoice}
-                id={choiceName}
-            >
+            <div className={dateClass} onClick={handleChoice} id={choiceName}>
                 {choiceValueString}
             </div>
             <div
                 className={
                     classes.calendarWindow + (showCalendar ? "" : " hidden")
-                }
-            >
+                }>
                 <div className={classes.topArrow}></div>
                 <div
                     className={classes.calendarWrap}
-                    style={{ marginLeft: monthPosition + "px" }}
-                >
+                    style={{ marginLeft: monthPosition + "px" }}>
                     <div
                         className={
                             classes.leftArrow +
                             (monthPosition === 0 ? " hidden" : "")
                         }
-                        onClick={() => handleMovePosition(1)}
-                    >
+                        onClick={() => handleMovePosition(1)}>
                         &#9001;
                     </div>
                     <div
@@ -154,8 +150,7 @@ const DateChoice = ({
                                 ? " hidden"
                                 : "")
                         }
-                        onClick={() => handleMovePosition(-1)}
-                    >
+                        onClick={() => handleMovePosition(-1)}>
                         &#9002;
                     </div>
                     {months.map((month) => (
@@ -181,13 +176,8 @@ DateChoice.propTypes = {
     occupiedDates: PropTypes.array,
     choiceName: PropTypes.string,
     onSetDate: PropTypes.func,
-    onMainClick: PropTypes.bool,
     activeCalendar: PropTypes.string,
     activateCalendar: PropTypes.func
 };
 
-const mapStateToProps = ({ onMainClick }) => ({
-    onMainClick
-});
-
-export default connect(mapStateToProps)(DateChoice);
+export default DateChoice;

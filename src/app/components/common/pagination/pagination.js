@@ -13,8 +13,7 @@ const Pagination = ({ count, pageSize, pageChange, currentPage }) => {
                 <li
                     key={"page_" + number}
                     className={currentPage === number ? classes.active : ""}
-                    onClick={() => pageChange(number)}
-                >
+                    onClick={() => pageChange(number)}>
                     {number}
                 </li>
             ))}

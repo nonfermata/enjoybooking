@@ -14,17 +14,11 @@ const PopupSubmit = ({ children, onSubmit, onExit }) => {
             <div className={classes.messageWindow}>
                 <div className={classes.message}>{children}</div>
                 <div className={classes.buttonsWrap}>
-                    <Button
-                        color="orange"
-                        onClick={onSubmit}
-                    >
+                    <Button color="orange" onClick={onSubmit}>
                         Да, решение окончательное
                     </Button>
                     <SpaceDiv height="20" />
-                    <Button
-                        color="grey"
-                        onClick={onExit}
-                    >
+                    <Button color="grey" onClick={onExit}>
                         Нет, я передумал
                     </Button>
                 </div>

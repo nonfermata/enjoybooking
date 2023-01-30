@@ -3,7 +3,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import Loader from "../../common/loader/loader";
 import Button from "../../common/button";
 import classes from "./roomPage.module.css";
-import CarouselBox from "./carouselBox/carouselBox";
+import CarouselBox from "../../common/carouselBox/carouselBox";
 import TopButton from "../../common/topButton";
 import heart from "../../common/svg/heart";
 import { useAuth } from "../../../hooks/useAuth";
@@ -70,8 +70,7 @@ const RoomPage = () => {
                             {room.photos.map((photo) => (
                                 <div
                                     className={classes.imgWrap}
-                                    key={photo.url}
-                                >
+                                    key={photo.url}>
                                     <img
                                         className={
                                             photo.orient === "hor"
@@ -100,8 +99,7 @@ const RoomPage = () => {
                                     right: "10px",
                                     color: "var(--orange-color)",
                                     backgroundColor: "transparent"
-                                }}
-                            >
+                                }}>
                                 {getTopButtonSVG()}
                             </TopButton>
                         )}
@@ -138,10 +136,7 @@ const RoomPage = () => {
                         />
                     </div>
                     <div className={classes.buttonsWrap}>
-                        <Button
-                            color="blue"
-                            onClick={handleBack}
-                        >
+                        <Button color="blue" onClick={handleBack}>
                             <div className={classes.buttonSize}>Назад</div>
                         </Button>
                         {isBookingButton && (

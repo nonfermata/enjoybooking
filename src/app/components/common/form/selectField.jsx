@@ -18,10 +18,7 @@ const SelectField = ({
         typeof options === "object" ? Object.values(options) : options;
     return (
         <div>
-            <label
-                htmlFor={name}
-                className={classes.label2}
-            >
+            <label htmlFor={name} className={classes.label2}>
                 {label}
             </label>
             <select
@@ -30,19 +27,12 @@ const SelectField = ({
                 style={style}
                 id={name}
                 onChange={handleChange}
-                value={value}
-            >
-                <option
-                    disabled
-                    value=""
-                >
+                value={value}>
+                <option disabled value="">
                     {defaultOption}
                 </option>
                 {optionsArray.map((option) => (
-                    <option
-                        key={option.name}
-                        value={option.value}
-                    >
+                    <option key={option.name} value={option.value}>
                         {option.name}
                     </option>
                 ))}

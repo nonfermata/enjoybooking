@@ -7,25 +7,15 @@ import { Link } from "react-router-dom";
 const Home = () => {
     return (
         <div className={classes.mainWrap}>
-            <Link
-                className={classes.titleImageWrap}
-                to="/rooms"
-            >
+            <Link className={classes.titleImageWrap} to="/rooms">
                 <img
                     className={classes.image}
                     src={titleImage}
                     alt="Main image"
                 />
             </Link>
-            <Link
-                className={classes.logoWrap}
-                to="/rooms"
-            >
-                <img
-                    className={classes.image}
-                    src={logoHome}
-                    alt="Logo"
-                />
+            <Link className={classes.logoWrap} to="/rooms">
+                <img className={classes.image} src={logoHome} alt="Logo" />
             </Link>
             <h1 className={classes.slogan}>
                 Лучшие предложения для комфортного отдыха!

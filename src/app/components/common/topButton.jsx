@@ -8,8 +8,7 @@ const TopButton = ({ children, handleClick, title, style }) => {
             style={style}
             className={classes.topBtn}
             title={title}
-            onClick={handleClick}
-        >
+            onClick={handleClick}>
             {children}
         </button>
     );

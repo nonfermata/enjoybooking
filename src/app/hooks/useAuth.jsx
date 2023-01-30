@@ -182,8 +182,7 @@ const AuthProvider = ({ children }) => {
                 currentUser,
                 getUserById,
                 getAllUsers
-            }}
-        >
+            }}>
             {!isLoading ? children : <Loader />}
         </AuthContext.Provider>
     );

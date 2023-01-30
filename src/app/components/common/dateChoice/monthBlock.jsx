@@ -27,10 +27,7 @@ const MonthBlock = ({
             <div className={classes.monthName}>{monthName}</div>
             <div className={classes.daysGrid}>
                 {week.map((item, index) => (
-                    <div
-                        key={index}
-                        className={classes.dayNameCell}
-                    >
+                    <div key={index} className={classes.dayNameCell}>
                         <>{item}</>
                     </div>
                 ))}
@@ -50,8 +47,7 @@ const MonthBlock = ({
                                     : classes.staticDayCell
                                 : classes.passiveDayCell) +
                             (date ? "" : " invisible")
-                        }
-                    >
+                        }>
                         <>{date && getDayNumber(date)}</>
                     </button>
                 ))}

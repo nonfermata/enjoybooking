@@ -7,10 +7,7 @@ const Loader = ({ size }) => {
     return (
         <div className={classes.loader + " " + classes[size]}>
             <p>L O A D I N G . . . . .</p>
-            <img
-                src={loaderRing}
-                alt="loading"
-            />
+            <img src={loaderRing} alt="loading" />
         </div>
     );
 };

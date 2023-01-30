@@ -1,15 +1,19 @@
-import { combineReducers, createStore } from "redux";
+import { combineReducers } from "redux";
 import bookingReducer from "./bookingReducer";
-import onMainClickReducer from "./onMainClickReducer";
+import onAppClickReducer from "./onAppClickReducer";
+import { configureStore } from "@reduxjs/toolkit";
 
-const reducers = combineReducers({
+const rootReducer = combineReducers({
     booking: bookingReducer,
-    onMainClick: onMainClickReducer
+    onAppClick: onAppClickReducer
 });
 
-const store = createStore(
-    reducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+function createStore() {
+    return configureStore({
+        reducer: rootReducer,
+        devTools: process.env.NODE_ENV !== "production"
+    });
+}
+const store = createStore();
 
 export default store;

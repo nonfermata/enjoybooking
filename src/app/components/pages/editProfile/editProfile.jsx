@@ -124,17 +124,11 @@ const EditProfile = () => {
                     value={data.image}
                     onChange={handleChangeData}
                 />
-                <Button
-                    color="blue"
-                    disabled={!isValid || !isChanged}
-                >
+                <Button color="blue" disabled={!isValid || !isChanged}>
                     Подтвердить
                 </Button>
                 <SpaceDiv height="30" />
-                <Button
-                    color="grey"
-                    onClick={handleBack}
-                >
+                <Button color="grey" onClick={handleBack}>
                     Назад
                 </Button>
             </div>

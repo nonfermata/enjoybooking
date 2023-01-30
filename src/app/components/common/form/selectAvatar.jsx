@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./form.module.css";
-import Button from "../button";
 import PropTypes from "prop-types";
 import getRandomImage from "../../../utils/getRandomImage";
+import renew from "../svg/renew";
 
 const SelectAvatar = ({ onChange, name, value }) => {
     const handleChangeAvatar = (event) => {
@@ -13,20 +13,14 @@ const SelectAvatar = ({ onChange, name, value }) => {
         <div className={classes.selectAvatarWrap}>
             <div className={classes.avatarDecr}>
                 <p>Ваша аватарка:</p>
-                <div className={classes.avaBtnWtap}>
-                    <Button
-                        color="sand"
-                        onClick={handleChangeAvatar}
-                    >
-                        Изменить
-                    </Button>
+                <div
+                    className={classes.avaBtnWrap}
+                    onClick={handleChangeAvatar}
+                    title="Изменить">
+                    {renew}
                 </div>
             </div>
-            <img
-                className={classes.avatar}
-                src={value}
-                alt="Image"
-            />
+            <img className={classes.avatar} src={value} alt="Image" />
         </div>
     );
 };

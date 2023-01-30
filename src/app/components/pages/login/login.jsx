@@ -23,8 +23,7 @@ const Login = () => {
                         Уже есть аккаунт?{" "}
                         <a
                             className={classes.toggleFormLink}
-                            onClick={toggleFormType}
-                        >
+                            onClick={toggleFormType}>
                             Войти
                         </a>
                     </p>
@@ -36,8 +35,7 @@ const Login = () => {
                         Нет аккаунта?{" "}
                         <a
                             className={classes.toggleFormLink}
-                            onClick={toggleFormType}
-                        >
+                            onClick={toggleFormType}>
                             Зарегистрироваться
                         </a>
                     </p>

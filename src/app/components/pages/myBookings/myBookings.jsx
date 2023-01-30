@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useBookings } from "../../../hooks/useBookings";
 import { useAuth } from "../../../hooks/useAuth";
-import RoomExBrief from "../../ui/roomExBrief/roomExBrief";
+import RoomExBrief from "../../common/roomExBrief/roomExBrief";
 import classes from "./myBookings.module.css";
 import Loader from "../../common/loader/loader";
 
@@ -27,10 +27,7 @@ const MyBookings = () => {
                 {bookings.length !== 0 ? (
                     <div className={classes.bookingsWrap}>
                         {bookings.map((item) => (
-                            <RoomExBrief
-                                key={item._id}
-                                id={item._id}
-                            />
+                            <RoomExBrief key={item._id} id={item._id} />
                         ))}
                     </div>
                 ) : (

@@ -29,7 +29,6 @@ export const months = getList(1, 12, [
     "декабрь"
 ]);
 
-const date = new Date();
-export const years = getList(1901, date.getFullYear());
+export const years = getList(1920, new Date().getFullYear());
 
 export const personsForBooking = getList(1, 5);

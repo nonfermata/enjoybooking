@@ -1,11 +1,11 @@
-import Favourites from "./favourites";
-import SetBooking from "./setBooking";
-import Admin from "./admin";
-import MyBookings from "./myBookings";
-import SuccessBooking from "./successBooking";
-import EditProfile from "./editProfile";
-import EditBooking from "./editBooking";
-import Booking from "./booking/booking";
+import Favourites from "../components/pages/favourites";
+import SetBooking from "../components/pages/setBooking";
+import Admin from "../components/pages/admin";
+import MyBookings from "../components/pages/myBookings";
+import SuccessBooking from "../components/pages/successBooking";
+import EditProfile from "../components/pages/editProfile";
+import EditBooking from "../components/pages/editBooking";
+import Booking from "../components/pages/booking/booking";
 
 const protectedRoutes = [
     {

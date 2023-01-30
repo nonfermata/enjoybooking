@@ -14,17 +14,17 @@ const getWordByNumber = (value, category) => {
 
 function getWordsByCategory(category) {
     switch (category) {
-        case "дни":
+        case "days":
             return ["день", "дня", "дней"];
-        case "ночи":
+        case "nights":
             return ["ночь", "ночи", "ночей"];
-        case "часы":
+        case "hours":
             return ["час", "часа", "часов"];
-        case "минуты":
+        case "minutes":
             return ["минута", "минуты", "минут"];
-        case "люди":
+        case "people":
             return ["человек", "человека", "человек"];
-        case "гости":
+        case "guests":
             return ["гость", "гостя", "гостей"];
         default:
             return [];

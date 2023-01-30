@@ -2,19 +2,21 @@ import React, { useEffect, useState } from "react";
 import classes from "./booking.module.css";
 import DateChoice from "../../common/dateChoice/dateChoice";
 import Button from "../../common/button";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import { connect } from "react-redux";
-import { setBooking } from "../../../../redux/bookingReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { setBooking as setBookingToStore } from "../../../../redux/bookingReducer";
 import { personsForBooking as persons } from "../../../utils/selectFieldData";
 import SelectField from "../../common/form/selectField";
 import SpaceDiv from "../../common/spaceDiv";
 import "moment/locale/ru";
 moment.locale("ru");
 
-const Booking = ({ booking: bookingState, setBooking: setBookingToStore }) => {
-    const [booking, setBooking] = useState(bookingState);
+const Booking = () => {
+    const dispatch = useDispatch();
+    const [booking, setBooking] = useState(
+        useSelector((state) => state.booking)
+    );
     const [activeCalendar, setActiveCalendar] = useState();
     const activateCalendar = (calendar) => {
         setActiveCalendar(calendar);
@@ -30,10 +32,10 @@ const Booking = ({ booking: bookingState, setBooking: setBookingToStore }) => {
         if (booking.checkIn && booking.checkOut) {
             const totalNights = (booking.checkOut - booking.checkIn) / 86400000;
             setBooking({ ...booking, totalNights });
-            setBookingToStore({ ...booking, totalNights });
+            dispatch(setBookingToStore({ ...booking, totalNights }));
         } else {
             setBooking({ ...booking, totalNights: "" });
-            setBookingToStore({ ...booking, totalNights: "" });
+            dispatch(setBookingToStore({ ...booking, totalNights: "" }));
         }
     }, [booking.checkIn, booking.checkOut, booking.persons]);
 
@@ -96,15 +98,5 @@ const Booking = ({ booking: bookingState, setBooking: setBookingToStore }) => {
         </>
     );
 };
-Booking.propTypes = {
-    booking: PropTypes.object,
-    setBooking: PropTypes.func
-};
 
-const mapStateToProps = ({ booking }) => ({
-    booking
-});
-
-const mapDispatchToProps = { setBooking };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Booking);
+export default Booking;

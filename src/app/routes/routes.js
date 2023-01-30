@@ -1,9 +1,9 @@
-import Rooms from "./rooms";
-import RoomPage from "./roomPage";
-import Login from "./login";
-import Logout from "../ui/logout";
-import Contacts from "./contacts";
-import Home from "./home";
+import Rooms from "../components/pages/rooms";
+import RoomPage from "../components/pages/roomPage";
+import Login from "../components/pages/login";
+import Logout from "../components/ui/logout";
+import Contacts from "../components/pages/contacts";
+import Home from "../components/pages/home";
 
 const routes = [
     {

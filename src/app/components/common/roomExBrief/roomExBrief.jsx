@@ -5,8 +5,8 @@ import moment from "moment";
 import "moment/locale/ru";
 import { useRooms } from "../../../hooks/useRooms";
 import { useAuth } from "../../../hooks/useAuth";
-import Loader from "../../common/loader/loader";
-import PopupSubmit from "../../common/popupSubmit/popupSubmit";
+import Loader from "../loader/loader";
+import PopupSubmit from "../popupSubmit/popupSubmit";
 import { useBookings } from "../../../hooks/useBookings";
 import { Link } from "react-router-dom";
 import getWordByNumber from "../../../utils/getWordByNumber";
@@ -82,8 +82,7 @@ const RoomExBrief = ({ id }) => {
         return (
             <div className={classes.bookingWrap}>
                 <div
-                    className={classes.status + " " + classes[extStatus.value]}
-                >
+                    className={classes.status + " " + classes[extStatus.value]}>
                     {extStatus.name}
                 </div>
                 <div className={classes.datesAndPersonsWrap}>
@@ -95,14 +94,15 @@ const RoomExBrief = ({ id }) => {
                     |
                     <div className={classes.persons}>
                         {booking.persons}{" "}
-                        {getWordByNumber(Number(booking.persons), "гости")}
+                        {getWordByNumber(Number(booking.persons), "guests")}
                     </div>
                     |
                     <div className={classes.price}>
                         <span className="fw600">
                             ${room.price * totalNights}
                         </span>{" "}
-                        за {totalNights} {getWordByNumber(totalNights, "ночи")}
+                        за {totalNights}{" "}
+                        {getWordByNumber(totalNights, "nights")}
                     </div>
                 </div>
                 <div className={classes.imgAndDecrWrap}>
@@ -145,8 +145,7 @@ const RoomExBrief = ({ id }) => {
                                             " " +
                                             classes.editBooking
                                         }
-                                        title="Редактировать"
-                                    >
+                                        title="Редактировать">
                                         Внести изменения
                                     </p>
                                 </Link>
@@ -157,8 +156,7 @@ const RoomExBrief = ({ id }) => {
                                         classes.cancelBooking
                                     }
                                     title="Отменить бронирование"
-                                    onClick={handleCancelBooking}
-                                >
+                                    onClick={handleCancelBooking}>
                                     Отменить бронирование
                                 </p>
                             </div>
@@ -168,8 +166,7 @@ const RoomExBrief = ({ id }) => {
                 {isPopup && (
                     <PopupSubmit
                         onSubmit={onSubmitCancellation}
-                        onExit={onExit}
-                    >
+                        onExit={onExit}>
                         Вы уверены, что хотите отменить это бронирование?
                     </PopupSubmit>
                 )}

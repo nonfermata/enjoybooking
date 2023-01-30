@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./admin.module.css";
 import { useBookings } from "../../../hooks/useBookings";
-import RoomExBrief from "../../ui/roomExBrief/roomExBrief";
+import RoomExBrief from "../../common/roomExBrief/roomExBrief";
 import Loader from "../../common/loader/loader";
 
 const Admin = () => {
@@ -23,10 +23,7 @@ const Admin = () => {
                 {bookings.length !== 0 ? (
                     <div className={classes.adminWrap}>
                         {bookings.map((item) => (
-                            <RoomExBrief
-                                key={item._id}
-                                id={item._id}
-                            />
+                            <RoomExBrief key={item._id} id={item._id} />
                         ))}
                     </div>
                 ) : (

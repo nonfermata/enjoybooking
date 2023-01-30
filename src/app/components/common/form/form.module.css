@@ -146,8 +146,25 @@
     align-items: flex-end;
 }
 
-.avaBtnWtap {
-    font-size: .95rem;
+.avaBtnWrap {
+    cursor: pointer;
+    color: var(--base-bg-color);
+    border: 1px solid var(--base-bg-color);
+    background-color: var(--base-blue-color);
+    padding: 5px 5px 3px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: all ease 0.15s;
+}
+
+.avaBtnWrap:hover {
+    color: var(--base-blue-color);
+    border: 1px solid var(--base-blue-color);
+    background-color: var(--base-bg-color);
+}
+
+.avaBtnWrap:active {
+    background-color: var(--light-beige-color);
 }
 
 .avatar {

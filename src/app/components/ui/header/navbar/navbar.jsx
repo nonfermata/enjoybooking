@@ -5,7 +5,8 @@ import { useAuth } from "../../../../hooks/useAuth";
 
 const Navbar = () => {
     const { currentUser } = useAuth();
-    const adminStatus = currentUser && currentUser._id === process.env.REACT_APP_ADMIN;
+    const adminStatus =
+        currentUser && currentUser._id === process.env.REACT_APP_ADMIN;
     const menu = [
         { path: "rooms", name: "Наши номера" },
         { path: "booking", name: "Забронировать", noadmin: true },
@@ -19,16 +20,12 @@ const Navbar = () => {
                     ({ path, name, admin, noadmin }) =>
                         ((adminStatus && !noadmin) ||
                             (!adminStatus && !admin)) && (
-                            <li
-                                key={path}
-                                className={classes.item}
-                            >
+                            <li key={path} className={classes.item}>
                                 <NavLink
                                     to={"/" + path}
                                     className={(isActive) =>
                                         isActive ? classes.active : null
-                                    }
-                                >
+                                    }>
                                     {name}
                                 </NavLink>
                             </li>

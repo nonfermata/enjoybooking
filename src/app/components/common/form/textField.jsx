@@ -23,10 +23,7 @@ const TextField = ({
         onChange(name, target.value);
     };
     return (
-        <div
-            className={classes.inputWrap}
-            style={wrapStyle}
-        >
+        <div className={classes.inputWrap} style={wrapStyle}>
             <input
                 className={classes.input}
                 style={inputStyle}
@@ -41,8 +38,7 @@ const TextField = ({
                 <div
                     className={classes.eye}
                     onClick={toggleShowPassword}
-                    title={showPassword ? "Скрыть пароль" : "Показать пароль"}
-                >
+                    title={showPassword ? "Скрыть пароль" : "Показать пароль"}>
                     {showPassword ? eye.slash : eye.open}
                 </div>
             )}

@@ -1,25 +1,31 @@
 import React from "react";
 import Header from "./components/ui/header/header";
-import Main from "./components/pages/main";
-import { onMainClick } from "../redux/onMainClickReducer";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import Main from "./layouts/main";
 import RoomsProvider from "./hooks/useRooms";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AuthProvider from "./hooks/useAuth";
 import BookingsProvider from "./hooks/useBookings";
 import CookiesMessage from "./utils/cookiesMessage/cookiesMessage";
-// import Button from "./components/common/button";
-// import initialize from "./mockData/initializeData";
+import isOnAppClicked from "./utils/isOnAppClicked";
+import { useDispatch } from "react-redux";
+import { onAppClick } from "../redux/onAppClickReducer";
+// import RestoreDataBase from "./utils/restoreDataBase";
 
-const App = ({ onMainClick }) => {
+const App = () => {
+    const dispatch = useDispatch();
+    const handleAppClick = (event) => {
+        if (isOnAppClicked(event)) {
+            dispatch(onAppClick());
+        }
+    };
     return (
-        <AuthProvider>
-            <div
-                className="container"
-                onClick={onMainClick}
-            >
+        <div
+            className="container"
+            onClick={() => {
+                handleAppClick(event);
+            }}>
+            <AuthProvider>
                 <Header />
                 <RoomsProvider>
                     <BookingsProvider>
@@ -27,21 +33,11 @@ const App = ({ onMainClick }) => {
                     </BookingsProvider>
                 </RoomsProvider>
                 <ToastContainer />
-                {/*<Button*/}
-                {/*    color="blue"*/}
-                {/*    onClick={initialize}*/}
-                {/*>*/}
-                {/*    Восстановить БД*/}
-                {/*</Button>*/}
-            </div>
+                {/*<RestoreDataBase />*/}
+            </AuthProvider>
             <CookiesMessage />
-        </AuthProvider>
+        </div>
     );
 };
-App.propTypes = {
-    onMainClick: PropTypes.func
-};
 
-const mapDispatchToProps = { onMainClick };
-
-export default connect(() => ({}), mapDispatchToProps)(App);
+export default App;

@@ -87,10 +87,7 @@ const SignIn = () => {
                 {enterError && (
                     <p className={classes.enterError}>{enterError}</p>
                 )}
-                <Button
-                    color="blue"
-                    disabled={!isValid || Boolean(enterError)}
-                >
+                <Button color="blue" disabled={!isValid || Boolean(enterError)}>
                     Войти
                 </Button>
             </div>

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import classes from "./roomBrief.module.css";
 import PropTypes from "prop-types";
-import Button from "../../common/button";
+import Button from "../button";
 import { NavLink } from "react-router-dom";
-import heart from "../../common/svg/heart";
-import cross from "../../common/svg/cross";
-import TopButton from "../../common/topButton";
+import heart from "../svg/heart";
+import cross from "../svg/cross";
+import TopButton from "../topButton";
 import { useAuth } from "../../../hooks/useAuth";
 
 const RoomBrief = ({
@@ -62,23 +62,17 @@ const RoomBrief = ({
         <div
             className={classes.roomWrap}
             onMouseOver={showTopButton}
-            onMouseLeave={hideTopButton}
-        >
+            onMouseLeave={hideTopButton}>
             {currentUser && parent !== "setBooking" && (
                 <TopButton
                     style={topButtonStyle}
                     title={getTopButtonTitle()}
-                    handleClick={handleFavouriteChange}
-                >
+                    handleClick={handleFavouriteChange}>
                     {getTopButtonSVG()}
                 </TopButton>
             )}
             <div className={classes.imgWrap}>
-                <img
-                    className={classes.image}
-                    src={mainPhoto}
-                    alt="Photo"
-                />
+                <img className={classes.image} src={mainPhoto} alt="Photo" />
             </div>
             <h1 className={classes.title}>{name}</h1>
             <ul className={classes.briefDescriptionList}>

@@ -1,22 +1,34 @@
-import { createAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { persons: "" };
 
-const set = createAction("booking/set-booking");
-const reset = createAction("booking/reset");
+const bookingSlice = createSlice({
+    name: "booking",
+    initialState,
+    reducers: {
+        set(state, action) {
+            return { ...action.payload };
+        },
+        reset() {
+            return initialState;
+        }
+    }
+});
+
+const { set, reset } = bookingSlice.actions;
+const bookingReducer = bookingSlice.reducer;
 
 export const setBooking = (booking) => set(booking);
 export const resetBooking = () => reset();
 
-const bookingReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case set.type:
-            return { ...action.payload };
-        case reset.type:
-            return initialState;
-        default:
-            return state;
-    }
-};
+// const bookingReducer = createReducer(initialState, (builder) => {
+//     builder
+//         .addCase(set, (state, action) => {
+//             return { ...action.payload };
+//         })
+//         .addCase(reset, () => {
+//             return initialState;
+//         });
+// });
 
 export default bookingReducer;

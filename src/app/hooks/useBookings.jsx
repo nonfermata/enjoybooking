@@ -94,8 +94,7 @@ const BookingsProvider = ({ children }) => {
                 getBookingById,
                 createBooking,
                 updateBooking
-            }}
-        >
+            }}>
             {children}
         </BookingsContext.Provider>
     );

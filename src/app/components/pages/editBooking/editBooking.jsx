@@ -44,16 +44,6 @@ const EditBooking = () => {
     const activateCalendar = (calendar) => {
         setActiveCalendar(calendar);
     };
-    const handleChange = (name, value, reset) => {
-        if (reset) {
-            setBooking({ ...booking, [name]: value, [reset]: "" });
-        } else {
-            setBooking({ ...booking, [name]: value });
-        }
-        if (!isChanged) {
-            setIsChanged(true);
-        }
-    };
 
     useEffect(() => {
         if (booking) {
@@ -98,10 +88,22 @@ const EditBooking = () => {
 
     const handleSubmit = async () => {
         await updateBooking(booking);
-        toast.success("Ваше бронирование успешно изменено 👌", {
+        toast.success("Бронирование успешно изменено 👌", {
             position: "top-right"
         });
         history.push(isAdmin ? "/admin" : "/my-bookings");
+    };
+    const getBlinkingMessage = () => {
+        setMaxPersonsClass("");
+        setTimeout(() => {
+            setMaxPersonsClass("hidden");
+        }, 200);
+        setTimeout(() => {
+            setMaxPersonsClass("");
+        }, 400);
+        setTimeout(() => {
+            setMaxPersonsClass("hidden");
+        }, 3000);
     };
     if (booking._id && occupiedDates) {
         if (currentUser._id !== booking.userId && !isAdmin) {
@@ -118,16 +120,20 @@ const EditBooking = () => {
             );
         } else {
             const room = getRoomById(booking.roomId);
-            const getPersons = () => {
-                if (booking.persons > room.capacity) {
-                    setMaxPersonsClass("");
-                    setBooking((prevState) => ({
-                        ...prevState,
-                        persons: String(room.capacity)
-                    }));
-                    return String(room.capacity);
+            const handleChange = (name, value, reset) => {
+                if (name === "persons") {
+                    if (value > room.capacity) {
+                        getBlinkingMessage();
+                        value = booking.persons;
+                    }
+                }
+                if (reset) {
+                    setBooking({ ...booking, [name]: value, [reset]: "" });
                 } else {
-                    return booking.persons;
+                    setBooking({ ...booking, [name]: value });
+                }
+                if (!isChanged) {
+                    setIsChanged(true);
                 }
             };
             return (
@@ -181,7 +187,7 @@ const EditBooking = () => {
                                         за {booking.totalNights}{" "}
                                         {getWordByNumber(
                                             booking.totalNights,
-                                            "ночи"
+                                            "nights"
                                         )}
                                     </>
                                 ) : (
@@ -196,7 +202,7 @@ const EditBooking = () => {
                             options={persons}
                             defaultOption=""
                             name="persons"
-                            value={getPersons()}
+                            value={booking.persons}
                             onChange={handleChange}
                             style={{
                                 padding: "8px 10px",
@@ -208,10 +214,12 @@ const EditBooking = () => {
                         <div
                             className={
                                 classes.maxPersons + " " + maxPersonsClass
-                            }
-                        >
-                            Максимальная вместимость номера – {room.capacity}{" "}
-                            {getWordByNumber(room.capacity, "люди")}
+                            }>
+                            Максимальная вместимость номера –{" "}
+                            <span className="fw600">
+                                {room.capacity}{" "}
+                                {getWordByNumber(room.capacity, "people")}
+                            </span>
                         </div>
                     </div>
                     <SpaceDiv height="30" />
@@ -237,15 +245,11 @@ const EditBooking = () => {
                             !booking.totalNights ||
                             booking.userPhone.length !== 10 ||
                             !isChanged
-                        }
-                    >
+                        }>
                         Сохранить изменения
                     </Button>
                     <SpaceDiv height="30" />
-                    <Button
-                        color="grey"
-                        onClick={handleBack}
-                    >
+                    <Button color="grey" onClick={handleBack}>
                         Назад
                     </Button>
                 </>

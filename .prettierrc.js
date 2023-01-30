@@ -2,8 +2,8 @@ module.exports = {
     trailingComma: "none",
     tabWidth: 4,
     semi: true,
-    bracketSameLine: false,
-    jsxBracketSameLine: false,
+    bracketSameLine: true,
+    jsxBracketSameLine: true,
     arrowParens: "always",
-    singleAttributePerLine: true
+    singleAttributePerLine: false
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import RoomExBrief from "../../ui/roomExBrief/roomExBrief";
+import RoomExBrief from "../../common/roomExBrief/roomExBrief";
 import { useBookings } from "../../../hooks/useBookings";
 import Loader from "../../common/loader/loader";
 
