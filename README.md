@@ -92,8 +92,8 @@ E-mail: [nonfermata@gmail.com](mailto:nonfermata@gmail.com)
 ## Как запустить проект
 
 1. Сделать клон проекта с GitHub »
-   `git clone https://github.com/nonfermata/my_bookings.git`
-2. Перейти в папку с проектом » `cd my_bookings`
+   `git clone https://github.com/nonfermata/my-bookings.git`
+2. Перейти в папку с проектом » `cd my-bookings`
 3. Установить зависимости »
    `npm install`
 4. Запустить проект »
