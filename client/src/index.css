@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --base-color: #111;
+    --base-bg-color: #fffff5;
+    --profile-bg-color: #22879a;
+    --base-blue-color: #00758c;
+    --menu-item-color: var(--base-bg-color);
+    --menu-item-active-color: #99eeff;
+    --ex-light-grey-color: hsl(50, 10%, 90%);
+    --light-grey-color: hsl(50, 10%, 75%);
+    --light-semi-grey-color: #aaa;
+    --semi-grey-color: #888;
+    --dark-grey-color: #646464;
+    --ex-light-beige-color: #f5f5e9;
+    --light-beige-color: #e0e0d1;
+    --semi-light-beige-color: #ebebdb;
+    --semi-beige-color: #d4d4c6;
+    --brown-grey-color: #877059;
+    --sand-color: #b99f58;
+    --light-orange-color: #ffd580;
+    --peach-color: #dc8b51;
+    --semi-orange-color: #ffb042;
+    --orange-color: #ee7700;
+    --light-beige-border: 1px solid var(--light-beige-color);
+    --semi-light-beige-border: 1px solid var(--semi-light-beige-color);
+    --slider-button-bg: #80808066;
+    --slider-button-bg-hover: #808080b3;
+    --slider-button-text: #f5f5e9b3;
+    --slider-button-border: 1px solid #ccccbe88;
+    --slider-indicators-color: #808080;
+    --green-color: #008c75;
+    --upcoming: #c5ede4;
+    --now: #fafab6;
+    --completed: #d5f2cb;
+    --user-cacelled: #e3e5e5;
+    --admin-cancelled: #e5dcda;
+    --total-delete: #a23f3f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 15px;
+    line-height: 1.2em;
+    color: var(--base-color);
+}
+
+textarea,
+button,
+input,
+select {
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    background-color: var(--base-bg-color);
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+.mainTitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding-bottom: 1.2em;
+    padding-left: 20px;
+}
+
+.warning {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--orange-color);
+}
+
+.fw300 {
+    font-weight: 300;
+}
+.fw400 {
+    font-weight: 400;
+}
+.fw500 {
+    font-weight: 500;
+}
+.fw600 {
+    font-weight: 600;
+}
+.fw700 {
+    font-weight: 700;
+}
+
+.green {
+    color: var(--green-color);
+}
+
+.blue {
+    color: var(--base-blue-color);
+}

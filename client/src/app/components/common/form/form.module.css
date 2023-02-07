@@ -1,0 +1,179 @@
+.inputWrap {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.error {
+    position: absolute;
+    font-weight: 300;
+    top: -1.2rem;
+    left: 30%;
+    font-size: 0.9rem;
+    color: #ff8000;
+    user-select: none;
+}
+
+.input {
+    width: 40%;
+    padding: 10px;
+    border: var(--light-beige-border);
+    border-radius: 5px;
+}
+
+.input::placeholder {
+    color: var(--light-semi-grey-color);
+    font-weight: 300;
+}
+
+.eye {
+    position: absolute;
+    right: 30%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 5px 0 5px;
+    cursor: pointer;
+    color: #888;
+}
+
+.radioWrap,
+.checkBoxWrap {
+    width: 40%;
+    color: var(--dark-grey-color);
+    margin-bottom: 30px;
+}
+
+.label1 {
+    margin-bottom: 15px;
+    display: block;
+}
+
+.label2 {
+    margin-bottom: 5px;
+    margin-left: 5px;
+    display: block;
+    font-size: 1rem;
+}
+
+.radioInputWrap {
+    display: flex;
+    gap: 25px;
+}
+
+.radioLabel {
+    font-size: 1rem;
+    margin-left: 3px;
+}
+
+.radioInput {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--base-blue-color);
+    margin-right: 5px;
+    top: 1px;
+    position: relative;
+    transition: 0.1s all linear;
+}
+
+.radioInput:checked {
+    border: 5px solid var(--base-blue-color);
+    box-shadow: 0 0 0 3px #9ce3ee;
+}
+
+.checkBoxWrap {
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+.checkBoxInput {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkBoxInput + label {
+    display: inline-flex;
+    align-items: flex-start;
+    user-select: none;
+}
+.checkBoxInput + label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 14px;
+    border: 1px solid var(--base-blue-color);
+    border-radius: 4px;
+    margin-right: 8px;
+    top: 2px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 75% 75%;
+    transition: 0.1s all linear;
+}
+
+.checkBoxInput:checked + label::before {
+    box-shadow: 0 0 0 3px #9ce3ee;
+    background-color: var(--base-blue-color);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.selectInput {
+    padding: 5px 10px;
+    border: var(--light-beige-border);
+    border-radius: 5px;
+}
+
+.selectAvatarWrap {
+    margin-bottom: 30px;
+    width: 40%;
+    display: flex;
+    gap: 20px;
+}
+
+.avatarDecr {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.avaBtnWrap {
+    cursor: pointer;
+    color: var(--base-bg-color);
+    border: 1px solid var(--base-bg-color);
+    background-color: var(--base-blue-color);
+    padding: 5px 5px 3px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: all ease 0.15s;
+}
+
+.avaBtnWrap:hover {
+    color: var(--base-blue-color);
+    border: 1px solid var(--base-blue-color);
+    background-color: var(--base-bg-color);
+}
+
+.avaBtnWrap:active {
+    background-color: var(--light-beige-color);
+}
+
+.btnRotated {
+    transform: rotate(-180deg);
+    transition: none;
+}
+
+.avatar {
+    width: 80px;
+    border: 1px solid var(--sand-color);
+    border-radius: 5px;
+}

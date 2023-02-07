@@ -1,0 +1,4 @@
+{
+    "port": 8080,
+    "mongoUri": "mongodb+srv://nonfermata:diMurPoem137@cluster0.oy01rye.mongodb.net/app?retryWrites=true&w=majority"
+}
