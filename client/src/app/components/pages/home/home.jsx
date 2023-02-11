@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoHome from '../../../assets/images/logo-home.png';
 import titleImage from '../../../assets/images/title-image.png';
 import classes from './home.module.css';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import classes from './login.module.css';
 import SignUp from './signUp';
 import SignIn from './signIn';
+import classes from './login.module.css';
 
 const Login = () => {
     const { type } = useParams();
@@ -23,7 +23,8 @@ const Login = () => {
                         Уже есть аккаунт?{' '}
                         <a
                             className={classes.toggleFormLink}
-                            onClick={toggleFormType}>
+                            onClick={toggleFormType}
+                        >
                             Войти
                         </a>
                     </p>
@@ -35,7 +36,8 @@ const Login = () => {
                         Нет аккаунта?{' '}
                         <a
                             className={classes.toggleFormLink}
-                            onClick={toggleFormType}>
+                            onClick={toggleFormType}
+                        >
                             Зарегистрироваться
                         </a>
                     </p>

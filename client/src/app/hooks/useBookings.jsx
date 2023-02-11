@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
-import bookingsService from '../services/bookings.service';
 import _ from 'lodash';
+import { toast } from 'react-toastify';
+import bookingsService from '../services/bookings.service';
 
 const BookingsContext = React.createContext();
 
@@ -94,7 +94,8 @@ const BookingsProvider = ({ children }) => {
                 getBookingById,
                 createBooking,
                 updateBooking
-            }}>
+            }}
+        >
             {children}
         </BookingsContext.Provider>
     );

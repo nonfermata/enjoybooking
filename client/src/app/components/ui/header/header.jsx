@@ -1,10 +1,10 @@
 import React from 'react';
-import classes from './header.module.css';
 import Navbar from './navbar/navbar';
 import Logo from './logo/logo';
 import LoginButton from './loginButton/loginButton';
-import { useAuth } from '../../../hooks/useAuth';
 import ProfileBlock from './profileBlock/profileBlock';
+import { useAuth } from '../../../hooks/useAuth';
+import classes from './header.module.css';
 
 const Header = () => {
     const { currentUser } = useAuth();

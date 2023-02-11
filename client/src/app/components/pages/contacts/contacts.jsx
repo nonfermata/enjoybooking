@@ -14,7 +14,8 @@ const Contacts = () => {
                         style={{ border: '0' }}
                         allowFullScreen={true}
                         loading='lazy'
-                        referrerPolicy='no-referrer-when-downgrade'></iframe>
+                        referrerPolicy='no-referrer-when-downgrade'
+                    ></iframe>
                 </div>
                 <div className={classes.infoWrap}>
                     <div className={classes.item}>

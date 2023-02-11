@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 import classes from './pagination.module.css';
-import PropTypes from 'prop-types';
 
 const Pagination = ({ count, pageSize, pageChange, currentPage }) => {
     const pagesCount = Math.ceil(count / pageSize);
@@ -13,7 +13,8 @@ const Pagination = ({ count, pageSize, pageChange, currentPage }) => {
                 <li
                     key={'page_' + number}
                     className={currentPage === number ? classes.active : ''}
-                    onClick={() => pageChange(number)}>
+                    onClick={() => pageChange(number)}
+                >
                     {number}
                 </li>
             ))}

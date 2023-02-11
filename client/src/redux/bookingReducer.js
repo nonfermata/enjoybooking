@@ -21,14 +21,6 @@ const bookingReducer = bookingSlice.reducer;
 export const setBooking = (booking) => set(booking);
 export const resetBooking = () => reset();
 
-// const bookingReducer = createReducer(initialState, (builder) => {
-//     builder
-//         .addCase(set, (state, action) => {
-//             return { ...action.payload };
-//         })
-//         .addCase(reset, () => {
-//             return initialState;
-//         });
-// });
+export const getBooking = () => (state) => state.booking;
 
 export default bookingReducer;

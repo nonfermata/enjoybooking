@@ -1,0 +1,45 @@
+.skeletonWrap {
+    margin-bottom: 20px;
+    padding: 10px 20px 15px;
+    background-color: var(--ex-light-beige-color);
+    width: 520px;
+    border: var(--semi-light-beige-border);
+    border-left: 7px solid var(--light-beige-color);
+    position: relative;
+}
+
+.status {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 0.8rem;
+    width: 20%;
+}
+
+.title {
+    margin-bottom: 15px;
+    width: 80%;
+}
+
+.contentWrap {
+    display: flex;
+    gap: 20px;
+}
+
+.image {
+    width: 130px;
+    height: 80px;
+}
+
+.content {
+    width: 100%;
+}
+
+.subtitle {
+    margin-bottom: 15px;
+    width: 70%;
+}
+
+.simpleString {
+    margin-bottom: 5px;
+}

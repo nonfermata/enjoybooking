@@ -1,15 +1,14 @@
 const express = require('express');
 const router = express.Router({ mergeParams: true });
-const Room = require('../models/Room')
+const Room = require('../models/Room');
+const getServerError = require('../utils/getServerError');
 
 router.get('/', async (req, res) => {
     try {
         const list = await Room.find();
-        res.status(200).send(list);
+        res.send(list);
     } catch (e) {
-        res.status(500).json({
-            message: 'Server error! Try again later'
-        });
+        getServerError(res);
     }
 });
 

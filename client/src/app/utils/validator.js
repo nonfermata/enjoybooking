@@ -40,8 +40,7 @@ const validator = (data, config) => {
                 const year = date.getFullYear();
                 statusValidate =
                     year - data.year < 18 ||
-                    (year - data.year === 18 &&
-                        month < data.month) ||
+                    (year - data.year === 18 && month < data.month) ||
                     (year - data.year === 18 &&
                         month === data.month &&
                         day < data.day);

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import classes from './admin.module.css';
-import { useBookings } from '../../../hooks/useBookings';
 import RoomExBrief from '../../common/roomExBrief/roomExBrief';
 import Loader from '../../common/loader/loader';
+import { useBookings } from '../../../hooks/useBookings';
+import classes from './admin.module.css';
 
 const Admin = () => {
     const [bookings, setBookings] = useState();

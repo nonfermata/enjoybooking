@@ -17,7 +17,8 @@ const CheckBoxField = ({ name, onChange, value, children }) => {
             />
             <label
                 // className={}
-                htmlFor={name}>
+                htmlFor={name}
+            >
                 {children}
             </label>
         </div>

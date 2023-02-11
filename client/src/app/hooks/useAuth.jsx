@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import usersService from '../services/users.service';
 import { toast } from 'react-toastify';
+import Loader from '../components/common/loader/loader';
+import usersService from '../services/users.service';
 import localStorageService, {
     setTokens
 } from '../services/localStorage.service';
-import Loader from '../components/common/loader/loader';
 
 export const httpAuth = axios.create({
     baseURL: 'https://identitytoolkit.googleapis.com/v1/',
@@ -182,7 +182,8 @@ const AuthProvider = ({ children }) => {
                 currentUser,
                 getUserById,
                 getAllUsers
-            }}>
+            }}
+        >
             {!isLoading ? children : <Loader />}
         </AuthContext.Provider>
     );

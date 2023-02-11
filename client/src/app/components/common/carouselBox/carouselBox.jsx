@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import classes from './carouselBox.module.css';
 import PropTypes from 'prop-types';
+import classes from './carouselBox.module.css';
 
 const CarouselBox = ({ children }) => {
     const gallery = children;
@@ -48,7 +48,8 @@ const CarouselBox = ({ children }) => {
     const indicatorsHTML = (
         <div
             style={{ left: `calc(50% - ${indicatorsOffset}px)` }}
-            className={classes.indicators}>
+            className={classes.indicators}
+        >
             {gallery.map((element, index) => (
                 <div
                     key={index}
@@ -58,7 +59,8 @@ const CarouselBox = ({ children }) => {
                             ? ' ' + classes.indicatorWrapActive
                             : '')
                     }
-                    onClick={() => handleSlideChange(index)}>
+                    onClick={() => handleSlideChange(index)}
+                >
                     <div className={classes.indicator}></div>
                 </div>
             ))}
@@ -71,13 +73,15 @@ const CarouselBox = ({ children }) => {
             <div
                 className={classes.control + ' ' + classes.previous}
                 onClick={handlePreviousPhoto}
-                title='Previous photo'>
+                title='Previous photo'
+            >
                 &lt;
             </div>
             <div
                 className={classes.control + ' ' + classes.next}
                 onClick={handleNextPhoto}
-                title='Next photo'>
+                title='Next photo'
+            >
                 &gt;
             </div>
             <div className={classes.window}>
@@ -85,7 +89,8 @@ const CarouselBox = ({ children }) => {
                     className={galleryClass}
                     style={{
                         transform: `translateX(${galleryOffset}%)`
-                    }}>
+                    }}
+                >
                     {gallery}
                 </div>
             </div>

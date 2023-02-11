@@ -8,7 +8,8 @@ const renew = (
         strokeWidth='1.5'
         stroke='currentColor'
         width='24'
-        height='24'>
+        height='24'
+    >
         <path
             strokeLinecap='round'
             strokeLinejoin='round'

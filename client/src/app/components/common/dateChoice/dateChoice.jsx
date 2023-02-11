@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { getMonths } from '../../../utils/renderCalendar';
-import classes from './dateChoice.module.css';
 import PropTypes from 'prop-types';
 import MonthBlock from './monthBlock';
-import { useSelector } from 'react-redux';
 import moment from 'moment';
 import 'moment/locale/ru';
+import { useSelector } from 'react-redux';
+import { getMonths } from '../../../utils/renderCalendar';
 import getImpossibleDates from '../../../utils/getImpossibleDates';
+import classes from './dateChoice.module.css';
 
 moment.locale('ru');
 
@@ -93,17 +93,20 @@ const DateChoice = ({
             <div
                 className={
                     classes.calendarWindow + (showCalendar ? '' : ' hidden')
-                }>
+                }
+            >
                 <div className={classes.topArrow}></div>
                 <div
                     className={classes.calendarWrap}
-                    style={{ marginLeft: monthPosition + 'px' }}>
+                    style={{ marginLeft: monthPosition + 'px' }}
+                >
                     <div
                         className={
                             classes.leftArrow +
                             (monthPosition === 0 ? ' hidden' : '')
                         }
-                        onClick={() => handleMovePosition(1)}>
+                        onClick={() => handleMovePosition(1)}
+                    >
                         &#9001;
                     </div>
                     <div
@@ -113,7 +116,8 @@ const DateChoice = ({
                                 ? ' hidden'
                                 : '')
                         }
-                        onClick={() => handleMovePosition(-1)}>
+                        onClick={() => handleMovePosition(-1)}
+                    >
                         &#9002;
                     </div>
                     {months.map((month) => (

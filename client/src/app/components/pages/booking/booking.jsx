@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import classes from './booking.module.css';
-import DateChoice from '../../common/dateChoice/dateChoice';
-import Button from '../../common/button';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import { useDispatch, useSelector } from 'react-redux';
-import { setBooking as setBookingToStore } from '../../../../redux/bookingReducer';
-import { personsForBooking as persons } from '../../../utils/selectFieldData';
+import 'moment/locale/ru';
+import Button from '../../common/button';
+import DateChoice from '../../common/dateChoice/dateChoice';
 import SelectField from '../../common/form/selectField';
 import SpaceDiv from '../../common/spaceDiv';
-import 'moment/locale/ru';
+import {
+    setBooking as setBookingToStore,
+    getBooking
+} from '../../../../redux/bookingReducer';
+import { personsForBooking as persons } from '../../../utils/selectFieldData';
+import classes from './booking.module.css';
 moment.locale('ru');
 
 const Booking = () => {
     const dispatch = useDispatch();
-    const [booking, setBooking] = useState(
-        useSelector((state) => state.booking)
-    );
+    const [booking, setBooking] = useState(useSelector(getBooking()));
     const [activeCalendar, setActiveCalendar] = useState();
     const activateCalendar = (calendar) => {
         setActiveCalendar(calendar);
@@ -90,7 +91,8 @@ const Booking = () => {
             <Link to='/rooms'>
                 <Button
                     color='blue'
-                    disabled={!booking.totalNights || !booking.persons}>
+                    disabled={!booking.totalNights || !booking.persons}
+                >
                     Выбрать номер
                 </Button>
             </Link>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import classes from './roomBrief.module.css';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import Button from '../button';
-import { NavLink } from 'react-router-dom';
-import heart from '../svg/heart';
-import cross from '../svg/cross';
 import TopButton from '../topButton';
 import { useAuth } from '../../../hooks/useAuth';
+import heart from '../svg/heart';
+import cross from '../svg/cross';
+import classes from './roomBrief.module.css';
 
 const RoomBrief = ({
     _id,
@@ -16,6 +16,7 @@ const RoomBrief = ({
     mainPhoto,
     parent
 }) => {
+    const history = useHistory();
     const { currentUser, updateUserFavourites } = useAuth();
     const isFavourite =
         currentUser &&
@@ -26,13 +27,6 @@ const RoomBrief = ({
             ? {}
             : { display: 'none' }
     );
-    const handleFavouriteChange = async () => {
-        try {
-            await updateUserFavourites(_id);
-        } catch (e) {
-            console.log(e.message);
-        }
-    };
     const showTopButton = () => {
         setTopButtonStyle({});
     };
@@ -57,17 +51,32 @@ const RoomBrief = ({
                 : 'Добавить в Избранное';
         }
     };
+    const handleFavouriteChange = async (event) => {
+        event.stopPropagation();
+        try {
+            await updateUserFavourites(_id);
+        } catch (e) {
+            console.log(e.message);
+        }
+    };
+    const handleClick = () => {
+        history.push(`/rooms/${_id}`);
+    };
 
     return (
         <div
             className={classes.roomWrap}
             onMouseOver={showTopButton}
-            onMouseLeave={hideTopButton}>
+            onMouseLeave={hideTopButton}
+            onClick={handleClick}
+            title="Посмотреть номер"
+        >
             {currentUser && parent !== 'setBooking' && (
                 <TopButton
                     style={topButtonStyle}
                     title={getTopButtonTitle()}
-                    handleClick={handleFavouriteChange}>
+                    onClick={handleFavouriteChange}
+                >
                     {getTopButtonSVG()}
                 </TopButton>
             )}
@@ -83,7 +92,7 @@ const RoomBrief = ({
             <div className={classes.price}>${price}</div>
             <div className={classes.goToRoomBtn}>
                 <Button color='blue'>
-                    <NavLink to={'/rooms/' + _id}>Посмотреть</NavLink>
+                    Посмотреть
                 </Button>
             </div>
         </div>

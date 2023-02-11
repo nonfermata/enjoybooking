@@ -1,11 +1,11 @@
 import React from 'react';
-import { useAuth } from '../../../../../hooks/useAuth';
-import classes from './profileMenu.module.css';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../../../../hooks/useAuth';
 import edit from '../../../../common/svg/edit';
 import bookings from '../../../../common/svg/bookings';
 import heart from '../../../../common/svg/heart';
 import logout from '../../../../common/svg/logout';
+import classes from './profileMenu.module.css';
 
 const ProfileMenu = () => {
     const { currentUser } = useAuth();

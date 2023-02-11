@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import classes from './login.module.css';
+import { useHistory } from 'react-router-dom';
 import Button from '../../common/button';
 import TextField from '../../common/form/textField';
-import validator from '../../../utils/validator';
 import RadioField from '../../common/form/radioField';
 import CheckBoxField from '../../common/form/checkBoxField';
 import SelectField from '../../common/form/selectField';
-import { days, months, years } from '../../../utils/selectFieldData';
-import validateDate from '../../../utils/validateDate';
-import { useAuth } from '../../../hooks/useAuth';
-import { useHistory } from 'react-router-dom';
 import SelectAvatar from '../../common/form/selectAvatar';
+import { useAuth } from '../../../hooks/useAuth';
+import validator from '../../../utils/validator';
+import validateDate from '../../../utils/validateDate';
 import getRandomImage from '../../../utils/getRandomImage';
+import { days, months, years } from '../../../utils/selectFieldData';
+import classes from './login.module.css';
 
 const SignUp = () => {
     const history = useHistory();
@@ -191,7 +191,8 @@ const SignUp = () => {
                     name='licence'
                     value={data.licence}
                     onChange={handleChangeData}
-                    error={errors.licence}>
+                    error={errors.licence}
+                >
                     <span>
                         Подтверждаю согласие с условиями{' '}
                         <a className={classes.licence}>

@@ -23,7 +23,7 @@
     padding: 0 6px 2px;
     font-size: 0.8rem;
     background-color: var(--total-delete);
-    opacity: .6;
+    opacity: 0.6;
     color: var(--base-bg-color);
     cursor: pointer;
 }

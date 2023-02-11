@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import classes from './cookiesMessage.module.css';
 import Button from '../../components/common/button';
+import classes from './cookiesMessage.module.css';
 
 const CookiesMessage = () => {
     const [isVisible, setIsVisible] = useState(false);

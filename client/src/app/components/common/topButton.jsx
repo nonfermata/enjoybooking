@@ -1,21 +1,22 @@
 import React from 'react';
-import classes from './commonStyles.module.css';
 import PropTypes from 'prop-types';
+import classes from './commonStyles.module.css';
 
-const TopButton = ({ children, handleClick, title, style }) => {
+const TopButton = ({ children, onClick, title, style }) => {
     return (
         <button
             style={style}
             className={classes.topBtn}
             title={title}
-            onClick={handleClick}>
+            onClick={onClick}
+        >
             {children}
         </button>
     );
 };
 TopButton.propTypes = {
     children: PropTypes.node,
-    handleClick: PropTypes.func,
+    onClick: PropTypes.func,
     title: PropTypes.string,
     style: PropTypes.object
 };

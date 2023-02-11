@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import classes from './form.module.css';
 import PropTypes from 'prop-types';
 import eye from '../svg/eye';
+import classes from './form.module.css';
 
 const TextField = ({
     type,
@@ -38,7 +38,8 @@ const TextField = ({
                 <div
                     className={classes.eye}
                     onClick={toggleShowPassword}
-                    title={showPassword ? 'Скрыть пароль' : 'Показать пароль'}>
+                    title={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
+                >
                     {showPassword ? eye.slash : eye.open}
                 </div>
             )}

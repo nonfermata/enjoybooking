@@ -1,7 +1,6 @@
-import { combineReducers } from 'redux';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import bookingReducer from './bookingReducer';
 import onAppClickReducer from './onAppClickReducer';
-import { configureStore } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({
     booking: bookingReducer,

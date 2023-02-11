@@ -10,6 +10,7 @@ const schema = new Schema(
         },
         password: String,
         birthday: Array,
+        favourites: Array,
         image: String,
         licence: Boolean,
         sex: { type: String, enum: ['male', 'female'] }

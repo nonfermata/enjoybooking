@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import classes from './popupSubmit.module.css';
 import PropTypes from 'prop-types';
 import Button from '../button';
 import SpaceDiv from '../spaceDiv';
+import classes from './popupSubmit.module.css';
 
 const PopupSubmit = ({ children, onSubmit, onExit }) => {
     const [windowClass, setWindowClass] = useState(classes.windowHidden);

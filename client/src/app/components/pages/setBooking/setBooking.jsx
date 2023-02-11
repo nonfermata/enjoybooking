@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useHistory } from 'react-router-dom';
-import RoomBrief from '../../common/roomBrief/roomBrief';
-import classes from './setBooking.module.css';
 import moment from 'moment';
 import 'moment/locale/ru';
+import RoomBrief from '../../common/roomBrief/roomBrief';
 import Button from '../../common/button';
-import { useAuth } from '../../../hooks/useAuth';
+import Loader from '../../common/loader/loader';
 import TextField from '../../common/form/textField';
 import SpaceDiv from '../../common/spaceDiv';
 import { useBookings } from '../../../hooks/useBookings';
+import { useAuth } from '../../../hooks/useAuth';
 import { useRooms } from '../../../hooks/useRooms';
 import { resetBooking } from '../../../../redux/bookingReducer';
 import changePhone from '../../common/changePhone';
-import Loader from '../../common/loader/loader';
+import classes from './setBooking.module.css';
 
 moment.locale('ru');
 
@@ -154,7 +154,8 @@ const SetBooking = () => {
                             <Button
                                 color='green'
                                 onClick={handleSubmitBooking}
-                                disabled={userPhone.length !== 10}>
+                                disabled={userPhone.length !== 10}
+                            >
                                 Подтвердить бронирование
                             </Button>
                         </div>

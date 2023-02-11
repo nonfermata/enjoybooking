@@ -1,6 +1,5 @@
-const Room = require('../models/Room')
-const roomsMock = require('../mockData/rooms.json')
-
+const Room = require('../models/Room');
+const roomsMock = require('../mockData/rooms.json');
 
 async function initDataBase() {
     const rooms = await Room.find();

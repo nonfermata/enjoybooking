@@ -27,7 +27,8 @@ const SelectField = ({
                 style={style}
                 id={name}
                 onChange={handleChange}
-                value={value}>
+                value={value}
+            >
                 <option disabled value=''>
                     {defaultOption}
                 </option>

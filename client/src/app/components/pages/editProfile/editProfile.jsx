@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import classes from './editProfile.module.css';
+import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Button from '../../common/button';
 import TextField from '../../common/form/textField';
-import validator from '../../../utils/validator';
 import RadioField from '../../common/form/radioField';
-import { useAuth } from '../../../hooks/useAuth';
-import { useHistory } from 'react-router-dom';
 import SpaceDiv from '../../common/spaceDiv';
 import SelectAvatar from '../../common/form/selectAvatar';
-import { toast } from 'react-toastify';
+import { useAuth } from '../../../hooks/useAuth';
+import validator from '../../../utils/validator';
+import classes from './editProfile.module.css';
 
 const EditProfile = () => {
     const { currentUser, updateUserData, getAllUsers } = useAuth();

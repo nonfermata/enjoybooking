@@ -1,8 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const chalk = require('chalk');
 const config = require('config');
 const mongoose = require('mongoose');
-const initDataBase = require('./startUp/initDataBase')
+const initDataBase = require('./startUp/initDataBase');
 const routes = require('./routes');
 const app = express();
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import RoomExBrief from '../../common/roomExBrief/roomExBrief';
-import { useBookings } from '../../../hooks/useBookings';
 import Loader from '../../common/loader/loader';
+import { useBookings } from '../../../hooks/useBookings';
 
 const SuccessBooking = () => {
     const [booking, setBooking] = useState();
@@ -16,7 +16,7 @@ const SuccessBooking = () => {
         return (
             <>
                 <div className='mainTitle green'>
-                    Поздравляем, Ваше бронирование подтвержденно!
+                    Поздравляем, Ваше бронирование подтверждено!
                 </div>
                 <RoomExBrief id={booking._id} />
             </>

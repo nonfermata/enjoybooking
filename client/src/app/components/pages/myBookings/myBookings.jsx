@@ -1,10 +1,10 @@
 /* eslint-disable indent */
 import React, { useEffect, useState } from 'react';
+import RoomExBrief from '../../common/roomExBrief/roomExBrief';
+import Loader from '../../common/loader/loader';
 import { useBookings } from '../../../hooks/useBookings';
 import { useAuth } from '../../../hooks/useAuth';
-import RoomExBrief from '../../common/roomExBrief/roomExBrief';
 import classes from './myBookings.module.css';
-import Loader from '../../common/loader/loader';
 
 const MyBookings = () => {
     const { currentUser } = useAuth();

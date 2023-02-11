@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from './components/ui/header/header';
-import Main from './layouts/main';
-import RoomsProvider from './hooks/useRooms';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from 'react-redux';
+import Main from './layouts/main';
+import Header from './components/ui/header/header';
+import RoomsProvider from './hooks/useRooms';
 import AuthProvider from './hooks/useAuth';
 import BookingsProvider from './hooks/useBookings';
 import CookiesMessage from './utils/cookiesMessage/cookiesMessage';
 import isOnAppClicked from './utils/isOnAppClicked';
-import { useDispatch } from 'react-redux';
 import { onAppClick } from '../redux/onAppClickReducer';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -23,7 +23,8 @@ const App = () => {
             className='container'
             onClick={() => {
                 handleAppClick(event);
-            }}>
+            }}
+        >
             <AuthProvider>
                 <Header />
                 <RoomsProvider>

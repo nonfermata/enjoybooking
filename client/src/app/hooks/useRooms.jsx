@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
-import roomsService from '../services/rooms.service';
+import { toast } from 'react-toastify';
 import Loader from '../components/common/loader/loader';
+import roomsService from '../services/rooms.service';
 
 const RoomsContext = React.createContext();
 

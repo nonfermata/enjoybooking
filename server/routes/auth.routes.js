@@ -4,6 +4,7 @@ const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const router = express.Router({ mergeParams: true });
 const tokenService = require('../services/token.service');
+const getServerError = require('../utils/getServerError')
 
 function getErrors(req, res) {
     const errors = validationResult(req);
@@ -47,7 +48,7 @@ router.post('/signUp', [
             await tokenService.save(newUser._id, tokens.refreshToken);
             res.status(201).send({ ...tokens, userId: newUser._id });
         } catch (e) {
-            res.status(500).json({ message: 'Server error! Try again later' });
+            getServerError(res);
         }
     }
 ]);
@@ -84,9 +85,9 @@ router.post('/signInWithPassword', [
             }
             const tokens = tokenService.generate({ _id: user._id });
             await tokenService.save(user._id, tokens.refreshToken);
-            res.status(200).send({ ...tokens, userId: user._id });
+            res.send({ ...tokens, userId: user._id });
         } catch (e) {
-            res.status(500).json({ message: 'Server error! Try again later' });
+            getServerError(res);
         }
     }
 ]);
@@ -106,9 +107,9 @@ router.post('/token', async (req, res) => {
         }
         const tokens = tokenService.generate({ _id: data._id });
         await tokenService.save(data._id, tokens.refreshToken);
-        res.status(200).send({ ...tokens, userId: data._id });
+        res.send({ ...tokens, userId: data._id });
     } catch (e) {
-        res.status(500).json({ message: 'Server error! Try again later' });
+        getServerError(res);
     }
 });
 

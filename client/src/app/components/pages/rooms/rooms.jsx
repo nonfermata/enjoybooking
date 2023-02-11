@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Loader from '../../common/loader/loader';
-import classes from './rooms.module.css';
 import RoomBrief from '../../common/roomBrief/roomBrief';
+import Loader from '../../common/loader/loader';
 import Pagination from '../../common/pagination/pagination';
 import { paginate } from '../../../utils/paginate';
 import { useRooms } from '../../../hooks/useRooms';
+import classes from './rooms.module.css';
 
 const Rooms = () => {
     const { rooms } = useRooms();

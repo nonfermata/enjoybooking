@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import ProfileMenu from './profileMenu/profileMenu';
 import { useAuth } from '../../../../hooks/useAuth';
 import classes from './profileBlock.module.css';
-import ProfileMenu from './profileMenu/profileMenu';
-import { useSelector } from 'react-redux';
 
 const ProfileBlock = () => {
     const onAppClick = useSelector((state) => state.onAppClick);
@@ -26,7 +26,8 @@ const ProfileBlock = () => {
             <div
                 className={classes.profileBlock}
                 style={blockStyle}
-                onClick={handleMenuStatus}>
+                onClick={handleMenuStatus}
+            >
                 <img
                     className={classes.icon}
                     src={currentUser.image}

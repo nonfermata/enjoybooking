@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import Loader from '../../common/loader/loader';
 import Button from '../../common/button';
-import classes from './roomPage.module.css';
 import CarouselBox from '../../common/carouselBox/carouselBox';
 import TopButton from '../../common/topButton';
-import heart from '../../common/svg/heart';
+import DateChoice from '../../common/dateChoice/dateChoice';
 import { useAuth } from '../../../hooks/useAuth';
 import { useRooms } from '../../../hooks/useRooms';
-import DateChoice from '../../common/dateChoice/dateChoice';
 import { useBookings } from '../../../hooks/useBookings';
+import heart from '../../common/svg/heart';
+import classes from './roomPage.module.css';
 
 const RoomPage = () => {
     const { currentUser, updateUserFavourites } = useAuth();
@@ -70,7 +70,8 @@ const RoomPage = () => {
                             {room.photos.map((photo) => (
                                 <div
                                     className={classes.imgWrap}
-                                    key={photo.url}>
+                                    key={photo.url}
+                                >
                                     <img
                                         className={
                                             photo.orient === 'hor'
@@ -91,15 +92,14 @@ const RoomPage = () => {
                                         ? 'Удалить из Избранного'
                                         : 'Добавить в Избранное'
                                 }
-                                handleClick={() =>
-                                    handleFavouriteChange(room._id)
-                                }
+                                onClick={() => handleFavouriteChange(room._id)}
                                 style={{
                                     top: '45px',
                                     right: '10px',
                                     color: 'var(--orange-color)',
                                     backgroundColor: 'transparent'
-                                }}>
+                                }}
+                            >
                                 {getTopButtonSVG()}
                             </TopButton>
                         )}

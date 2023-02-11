@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './loader.module.css';
-import loaderRing from '../../../assets/images/dual_ring_loader.gif';
 import PropTypes from 'prop-types';
+import loaderRing from '../../../assets/images/dual_ring_loader.gif';
+import classes from './loader.module.css';
 
 const Loader = ({ size }) => {
     return (

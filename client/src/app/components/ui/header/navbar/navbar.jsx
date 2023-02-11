@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import classes from './navbar.module.css';
 import { useAuth } from '../../../../hooks/useAuth';
+import classes from './navbar.module.css';
 
 const Navbar = () => {
     const { currentUser } = useAuth();
@@ -25,7 +25,8 @@ const Navbar = () => {
                                     to={'/' + path}
                                     className={(isActive) =>
                                         isActive ? classes.active : null
-                                    }>
+                                    }
+                                >
                                     {name}
                                 </NavLink>
                             </li>

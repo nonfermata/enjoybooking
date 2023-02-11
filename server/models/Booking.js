@@ -7,8 +7,8 @@ const schema = new Schema(
         persons: Number,
         totalNights: Number,
         status: String,
-        roomId: { type: Schema.Types.ObjectId, ref: 'Booking', required: true },
-        userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        roomId: { type: Schema.Types.ObjectId, ref: 'Room' },
+        userId: { type: Schema.Types.ObjectId, ref: 'User' },
         userPhone: String
     },
     {

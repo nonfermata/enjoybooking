@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import classes from './roomExBrief.module.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import moment from 'moment';
 import 'moment/locale/ru';
-import { useRooms } from '../../../hooks/useRooms';
-import { useAuth } from '../../../hooks/useAuth';
-import Loader from '../loader/loader';
 import PopupSubmit from '../popupSubmit/popupSubmit';
 import { useBookings } from '../../../hooks/useBookings';
-import { Link } from 'react-router-dom';
+import { useRooms } from '../../../hooks/useRooms';
+import { useAuth } from '../../../hooks/useAuth';
 import getWordByNumber from '../../../utils/getWordByNumber';
-import { toast } from 'react-toastify';
+import classes from './roomExBrief.module.css';
+import SkeletonCard from '../skeleton/skeletonCard';
 moment.locale('ru');
 
 const RoomExBrief = ({ id }) => {
@@ -82,7 +82,8 @@ const RoomExBrief = ({ id }) => {
         return (
             <div className={classes.bookingWrap}>
                 <div
-                    className={classes.status + ' ' + classes[extStatus.value]}>
+                    className={classes.status + ' ' + classes[extStatus.value]}
+                >
                     {extStatus.name}
                 </div>
                 <div className={classes.datesAndPersonsWrap}>
@@ -145,7 +146,8 @@ const RoomExBrief = ({ id }) => {
                                             ' ' +
                                             classes.editBooking
                                         }
-                                        title='Редактировать'>
+                                        title='Редактировать'
+                                    >
                                         Внести изменения
                                     </p>
                                 </Link>
@@ -156,7 +158,8 @@ const RoomExBrief = ({ id }) => {
                                         classes.cancelBooking
                                     }
                                     title='Отменить бронирование'
-                                    onClick={handleCancelBooking}>
+                                    onClick={handleCancelBooking}
+                                >
                                     Отменить бронирование
                                 </p>
                             </div>
@@ -166,14 +169,15 @@ const RoomExBrief = ({ id }) => {
                 {isPopup && (
                     <PopupSubmit
                         onSubmit={onSubmitCancellation}
-                        onExit={onExit}>
+                        onExit={onExit}
+                    >
                         Вы уверены, что хотите отменить это бронирование?
                     </PopupSubmit>
                 )}
             </div>
         );
     } else {
-        return <Loader size='small' />;
+        return <SkeletonCard />;
     }
 };
 

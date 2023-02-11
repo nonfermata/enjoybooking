@@ -1,8 +1,8 @@
 /* eslint-disable indent */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getMonthDays } from '../../../utils/renderCalendar';
 import classes from './dateChoice.module.css';
-import PropTypes from 'prop-types';
 
 const MonthBlock = ({
     monthName,
@@ -47,7 +47,8 @@ const MonthBlock = ({
                                     : classes.staticDayCell
                                 : classes.passiveDayCell) +
                             (date ? '' : ' invisible')
-                        }>
+                        }
+                    >
                         <>{date && getDayNumber(date)}</>
                     </button>
                 ))}

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Loader from '../../common/loader/loader';
-import classes from './favourites.module.css';
 import RoomBrief from '../../common/roomBrief/roomBrief';
-import { paginate } from '../../../utils/paginate';
 import Pagination from '../../common/pagination/pagination';
 import { useAuth } from '../../../hooks/useAuth';
 import { useRooms } from '../../../hooks/useRooms';
+import { paginate } from '../../../utils/paginate';
+import classes from './favourites.module.css';
 
 const Favourites = () => {
     const { rooms: allRooms } = useRooms();

@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './commonStyles.module.css';
 import PropTypes from 'prop-types';
+import classes from './commonStyles.module.css';
 
 const Button = ({ children, color, disabled, onClick }) => {
     return (
@@ -12,7 +12,8 @@ const Button = ({ children, color, disabled, onClick }) => {
                 (disabled ? ' ' + classes.btnDisabled : '')
             }
             disabled={disabled}
-            onClick={onClick}>
+            onClick={onClick}
+        >
             {children}
         </button>
     );

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import classes from './form.module.css';
 import PropTypes from 'prop-types';
 import getRandomImage from '../../../utils/getRandomImage';
 import renew from '../svg/renew';
+import classes from './form.module.css';
 
 const SelectAvatar = ({ onChange, name, value }) => {
     const [btnClass, setBtnClass] = useState('');
@@ -22,7 +22,8 @@ const SelectAvatar = ({ onChange, name, value }) => {
                 <div
                     className={classes.avaBtnWrap + ' ' + btnClass}
                     onClick={handleChangeAvatar}
-                    title='Изменить'>
+                    title='Изменить'
+                >
                     {renew}
                 </div>
             </div>

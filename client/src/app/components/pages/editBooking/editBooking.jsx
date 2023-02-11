@@ -1,38 +1,38 @@
 import React, { useEffect, useRef, useState } from 'react';
-import classes from './editBooking.module.css';
+import { useParams, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import moment from 'moment';
+import 'moment/locale/ru';
+import _ from 'lodash';
 import DateChoice from '../../common/dateChoice/dateChoice';
 import Button from '../../common/button';
-import { useParams, useHistory } from 'react-router-dom';
-import { personsForBooking as persons } from '../../../utils/selectFieldData';
 import SelectField from '../../common/form/selectField';
 import SpaceDiv from '../../common/spaceDiv';
-import { useBookings } from '../../../hooks/useBookings';
 import Loader from '../../common/loader/loader';
-import { useAuth } from '../../../hooks/useAuth';
-import 'moment/locale/ru';
-import moment from 'moment';
 import TextField from '../../common/form/textField';
-import changePhone from '../../common/changePhone';
+import { useAuth } from '../../../hooks/useAuth';
 import { useRooms } from '../../../hooks/useRooms';
+import { useBookings } from '../../../hooks/useBookings';
 import getWordByNumber from '../../../utils/getWordByNumber';
-import _ from 'lodash';
-import { toast } from 'react-toastify';
+import { personsForBooking as persons } from '../../../utils/selectFieldData';
+import changePhone from '../../common/changePhone';
 import getBlinking from '../../../utils/getBlinking';
+import classes from './editBooking.module.css';
 moment.locale('ru');
 
 const EditBooking = () => {
-    const [isChanged, setIsChanged] = useState(false);
     const history = useHistory();
     const ref = useRef({});
+    const { bookingId } = useParams();
     const { getRoomById } = useRooms();
     const { currentUser } = useAuth();
-    const isAdmin = currentUser._id === process.env.REACT_APP_ADMIN;
     const { getRoomBookings, getBookingById, updateBooking } = useBookings();
-    const { bookingId } = useParams();
+    const [isChanged, setIsChanged] = useState(false);
     const [booking, setBooking] = useState({});
     const [activeCalendar, setActiveCalendar] = useState();
     const [occupiedDates, setOccupiedDates] = useState();
     const [maxPersonsClass, setMaxPersonsClass] = useState('hidden');
+    const isAdmin = currentUser._id === process.env.REACT_APP_ADMIN;
     const dateNow = Date.now();
     useEffect(() => {
         getBookingById(bookingId).then((result) => {
@@ -204,7 +204,8 @@ const EditBooking = () => {
                         <div
                             className={
                                 classes.maxPersons + ' ' + maxPersonsClass
-                            }>
+                            }
+                        >
                             Максимальная вместимость номера –{' '}
                             <span className='fw600'>
                                 {room.capacity}{' '}
@@ -235,7 +236,8 @@ const EditBooking = () => {
                             !booking.totalNights ||
                             booking.userPhone.length !== 10 ||
                             !isChanged
-                        }>
+                        }
+                    >
                         Сохранить изменения
                     </Button>
                     <SpaceDiv height='30' />
