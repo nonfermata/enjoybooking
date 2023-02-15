@@ -8,11 +8,12 @@ import DateChoice from '../../common/dateChoice/dateChoice';
 import { useAuth } from '../../../hooks/useAuth';
 import { useRooms } from '../../../hooks/useRooms';
 import { useBookings } from '../../../hooks/useBookings';
+import updateFavourites from '../../../utils/updateFavourites';
 import heart from '../../common/svg/heart';
 import classes from './roomPage.module.css';
 
 const RoomPage = () => {
-    const { currentUser, updateUserFavourites } = useAuth();
+    const { currentUser, updateUserData } = useAuth();
     const { roomId } = useParams();
     const room = useRooms().getRoomById(roomId);
     const { getRoomBookings } = useBookings();
@@ -51,7 +52,11 @@ const RoomPage = () => {
 
     const handleFavouriteChange = async () => {
         try {
-            await updateUserFavourites(roomId);
+            const newUserData = {
+                ...currentUser,
+                favourites: updateFavourites(currentUser.favourites, roomId)
+            };
+            await updateUserData(newUserData);
         } catch (e) {
             console.log(e.message);
         }

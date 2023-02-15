@@ -20,6 +20,16 @@ router.patch('/:userId', authMiddleware, async (req, res) => {
     }
 });
 
+router.get('/:userId', authMiddleware, async (req, res) => {
+    try {
+        const { userId } = req.params;
+        const user = await User.findOne({ _id: userId });
+        res.send(user);
+    } catch (e) {
+        getServerError(res);
+    }
+});
+
 router.get('/', authMiddleware, async (req, res) => {
     try {
         const users = await User.find();

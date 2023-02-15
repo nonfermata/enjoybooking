@@ -6,7 +6,7 @@
     padding: 25px 10px 10px;
     background-color: var(--profile-bg-color);
     list-style: none;
-    z-index: 100;
+    z-index: 101;
 }
 
 .profileMenu li {

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
+import _ from 'lodash';
 import Loader from '../components/common/loader/loader';
 import roomsService from '../services/rooms.service';
 
@@ -27,7 +28,7 @@ const RoomsProvider = ({ children }) => {
     async function getRooms() {
         try {
             const data = await roomsService.get();
-            setRooms(data);
+            setRooms(_.orderBy(data, ['listNumber']));
             setIsLoading(false);
         } catch (e) {
             errorCatcher(e);

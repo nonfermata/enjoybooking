@@ -7,6 +7,7 @@ import { useAuth } from '../../../hooks/useAuth';
 import heart from '../svg/heart';
 import cross from '../svg/cross';
 import classes from './roomBrief.module.css';
+import updateFavourites from '../../../utils/updateFavourites';
 
 const RoomBrief = ({
     _id,
@@ -17,7 +18,7 @@ const RoomBrief = ({
     parent
 }) => {
     const history = useHistory();
-    const { currentUser, updateUserFavourites } = useAuth();
+    const { currentUser, updateUserData } = useAuth();
     const isFavourite =
         currentUser &&
         currentUser.favourites &&
@@ -54,7 +55,11 @@ const RoomBrief = ({
     const handleFavouriteChange = async (event) => {
         event.stopPropagation();
         try {
-            await updateUserFavourites(_id);
+            const newUserData = {
+                ...currentUser,
+                favourites: updateFavourites(currentUser.favourites, _id)
+            };
+            await updateUserData(newUserData);
         } catch (e) {
             console.log(e.message);
         }
@@ -69,7 +74,7 @@ const RoomBrief = ({
             onMouseOver={showTopButton}
             onMouseLeave={hideTopButton}
             onClick={handleClick}
-            title="Посмотреть номер"
+            title='Посмотреть номер'
         >
             {currentUser && parent !== 'setBooking' && (
                 <TopButton
@@ -91,9 +96,7 @@ const RoomBrief = ({
             </ul>
             <div className={classes.price}>${price}</div>
             <div className={classes.goToRoomBtn}>
-                <Button color='blue'>
-                    Посмотреть
-                </Button>
+                <Button color='blue'>Посмотреть</Button>
             </div>
         </div>
     );

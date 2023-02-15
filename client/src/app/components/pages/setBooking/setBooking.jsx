@@ -29,7 +29,7 @@ const SetBooking = () => {
     const [roomBookings, setRoomBookings] = useState();
     useEffect(() => {
         if (Object.values(booking).some((item) => item === '')) {
-            history.push('/');
+            history.push('/booking');
         }
         getRoomBookings(roomId).then((result) => setRoomBookings(result));
     }, []);
@@ -56,16 +56,14 @@ const SetBooking = () => {
     const handleSubmitBooking = async () => {
         const data = {
             ...booking,
-            userId: user._id,
             roomId,
             userPhone,
-            status: 'ok',
-            _id: String(Date.now())
+            status: 'ok'
         };
         try {
-            await createBooking(data);
+            const booking = await createBooking(data);
             dispatch(resetBooking());
-            history.push('/success-booking/' + data._id);
+            history.push('/success-booking/' + booking._id);
         } catch (e) {
             console.log(e.message);
         }
@@ -145,7 +143,7 @@ const SetBooking = () => {
                                     fontWeight: '600'
                                 }}
                             />
-                            <Link to='/'>
+                            <Link to='/booking'>
                                 <Button color='blue'>
                                     Изменить бронирование
                                 </Button>

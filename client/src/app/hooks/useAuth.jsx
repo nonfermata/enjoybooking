@@ -1,18 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Loader from '../components/common/loader/loader';
 import usersService from '../services/users.service';
-import localStorageService, {
-    setTokens
-} from '../services/localStorage.service';
+import localStorageService from '../services/localStorage.service';
+import authService from '../services/auth.service';
 
-export const httpAuth = axios.create({
-    baseURL: 'https://identitytoolkit.googleapis.com/v1/',
-    params: { key: process.env.REACT_APP_FIREBASE_KEY }
-});
 const AuthContext = React.createContext();
 
 export const useAuth = () => useContext(AuthContext);
@@ -74,19 +68,11 @@ const AuthProvider = ({ children }) => {
         setError(message);
     }
 
-    async function signUp({ email, password, ...rest }) {
+    async function signUp(payload) {
         try {
-            const { data } = await httpAuth.post('accounts:signUp', {
-                email,
-                password,
-                returnSecureToken: true
-            });
-            setTokens(data);
-            await createUser({
-                _id: data.localId,
-                email,
-                ...rest
-            });
+            const data = await authService.register(payload);
+            localStorageService.setTokens(data);
+            await getUserData();
         } catch (e) {
             errorCatcher(e);
             const { code, message } = e.response.data.error;
@@ -101,26 +87,10 @@ const AuthProvider = ({ children }) => {
         }
     }
 
-    async function createUser(data) {
-        try {
-            const content = await usersService.create(data);
-            setUser(content);
-        } catch (e) {
-            errorCatcher(e);
-        }
-    }
-
     async function signIn({ email, password }) {
         try {
-            const { data } = await httpAuth.post(
-                'accounts:signInWithPassword',
-                {
-                    email,
-                    password,
-                    returnSecureToken: true
-                }
-            );
-            setTokens(data);
+            const data = await authService.login(email, password);
+            localStorageService.setTokens(data);
             await getUserData();
         } catch (e) {
             errorCatcher(e);
@@ -147,24 +117,6 @@ const AuthProvider = ({ children }) => {
         }
     }
 
-    async function updateUserFavourites(id) {
-        let newFavourites = currentUser.favourites;
-        if (newFavourites) {
-            if (newFavourites.some((item) => item === id)) {
-                newFavourites = currentUser.favourites.filter(
-                    (item) => item !== id
-                );
-            } else newFavourites.push(id);
-        } else newFavourites = [id];
-        const newUserData = { ...currentUser, favourites: newFavourites };
-        try {
-            await usersService.update(newUserData);
-            setUser(newUserData);
-        } catch (e) {
-            errorCatcher(e);
-        }
-    }
-
     function logOut() {
         localStorageService.removeAuthData();
         setUser(null);
@@ -177,9 +129,8 @@ const AuthProvider = ({ children }) => {
                 signIn,
                 signUp,
                 logOut,
-                updateUserData,
-                updateUserFavourites,
                 currentUser,
+                updateUserData,
                 getUserById,
                 getAllUsers
             }}

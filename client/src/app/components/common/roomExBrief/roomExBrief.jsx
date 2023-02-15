@@ -15,13 +15,13 @@ moment.locale('ru');
 
 const RoomExBrief = ({ id }) => {
     const [user, setUser] = useState();
-    const { getBookingById, updateBooking } = useBookings();
     const [booking, setBooking] = useState();
+    const [isPopup, setIsPopup] = useState(false);
+    const { getBookingById, updateBooking } = useBookings();
     const { getUserById } = useAuth();
     const { getRoomById } = useRooms();
     const { currentUser } = useAuth();
     const isAdmin = currentUser._id === process.env.REACT_APP_ADMIN;
-    const [isPopup, setIsPopup] = useState(false);
 
     useEffect(() => {
         getBookingById(id).then((result) => setBooking(result));

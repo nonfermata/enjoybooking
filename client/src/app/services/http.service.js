@@ -2,36 +2,60 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import configFile from '../config.json';
+import authService from './auth.service';
+import localStorageService from './localStorage.service';
 
 const http = axios.create({
     baseURL: configFile.apiEndpoint
 });
 
 http.interceptors.request.use(
-    function (request) {
+    async function (config) {
+        const expiresDate = localStorageService.getTokenExpiresDate();
+        const refreshToken = localStorageService.getRefreshToken();
+        const isExpired = refreshToken && expiresDate < Date.now();
         if (configFile.isFireBase) {
-            request.url =
-                (/\/$/.test(request.url)
-                    ? request.url.slice(0, -1)
-                    : request.url) + '.json';
+            const containSlash = /\/$/gi.test(config.url);
+            config.url =
+                (containSlash ? config.url.slice(0, -1) : config.url) + '.json';
+            if (isExpired) {
+                const data = await authService.refresh();
+                localStorageService.setTokens({
+                    refreshToken: data.refresh_token,
+                    idToken: data.id_token,
+                    expiresIn: data.expires_in,
+                    localId: data.user_id
+                });
+            }
+            const accessToken = localStorageService.getAccessToken();
+            if (accessToken) {
+                config.params = { ...config.params, auth: accessToken };
+            }
+        } else {
+            if (isExpired) {
+                const data = await authService.refresh();
+                localStorageService.setTokens(data);
+            }
+            const accessToken = localStorageService.getAccessToken();
+            if (accessToken) {
+                config.headers = {
+                    ...config.headers,
+                    Authorization: `Bearer ${accessToken}`
+                };
+            }
         }
-        return request;
+        return config;
     },
     function (error) {
-        Promise.reject(error);
+        return Promise.reject(error);
     }
 );
 
-const transformData = (data) => {
-    return data && !data._id ? Object.values(data) : data;
-};
-
 http.interceptors.response.use(
     function (response) {
-        if (configFile.isFireBase) {
-            return transformData(response.data);
-        }
-        return response;
+        return configFile.isFireBase
+            ? transformData(response.data)
+            : response.data;
     },
     function (error) {
         const expectedErrors =
@@ -45,6 +69,10 @@ http.interceptors.response.use(
         return Promise.reject(error);
     }
 );
+
+function transformData(data) {
+    return data && !data._id ? Object.values(data) : data;
+}
 
 const httpService = {
     get: http.get,

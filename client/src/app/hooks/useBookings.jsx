@@ -58,7 +58,8 @@ const BookingsProvider = ({ children }) => {
 
     async function getBookingById(id) {
         try {
-            return await bookingsService.getBookingById(id);
+            const data = await bookingsService.get();
+            return data.find((item) => item._id === id);
         } catch (e) {
             errorCatcher(e);
         }
@@ -66,7 +67,7 @@ const BookingsProvider = ({ children }) => {
 
     async function createBooking(data) {
         try {
-            await bookingsService.create(data);
+            return await bookingsService.create(data);
         } catch (e) {
             errorCatcher(e);
         }
@@ -89,9 +90,9 @@ const BookingsProvider = ({ children }) => {
         <BookingsContext.Provider
             value={{
                 getAllBookings,
+                getBookingById,
                 getRoomBookings,
                 getUserBookings,
-                getBookingById,
                 createBooking,
                 updateBooking
             }}

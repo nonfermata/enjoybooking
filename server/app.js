@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const chalk = require('chalk');
+const cors = require('cors');
 const config = require('config');
 const mongoose = require('mongoose');
 const initDataBase = require('./startUp/initDataBase');
@@ -9,6 +10,8 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
+
 app.use('/api', routes);
 
 const PORT = config.get('port') ?? 8080;
