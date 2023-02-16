@@ -19,8 +19,8 @@
 
 .icon {
     width: 35px;
-    border-radius: 50%;
-    border: 2px solid var(--menu-item-active-color);
+    border-radius: 5px;
+    border: 1px solid var(--menu-item-active-color);
     background-color: var(--base-bg-color);
 }
 

@@ -9,6 +9,7 @@ E-mail: [nonfermata@gmail.com](mailto:nonfermata@gmail.com)
 ## Используемые технологии, модули и библиотеки
 
 - ReactJS
+- NodeJS
 - React Router Dom (версия 5.3.0)
 - Redux
 - React-Redux
@@ -17,7 +18,7 @@ E-mail: [nonfermata@gmail.com](mailto:nonfermata@gmail.com)
 - Moment
 - Lodash
 - React Toastify
-- FireBase
+– React Loading Skeleton
 - PropTypes
 - Prettier
 - ESLint
@@ -93,12 +94,3 @@ E-mail: [nonfermata@gmail.com](mailto:nonfermata@gmail.com)
 
 ---
 
-## Как запустить проект
-
-1. Сделать клон проекта с GitHub »
-   `git clone https://github.com/nonfermata/my-bookings.git`
-2. Перейти в папку с проектом » `cd my-bookings`
-3. Установить зависимости »
-   `npm install`
-4. Запустить проект »
-   `npm start`

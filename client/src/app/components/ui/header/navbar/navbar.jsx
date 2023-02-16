@@ -8,9 +8,9 @@ const Navbar = () => {
     const adminStatus =
         currentUser && currentUser._id === process.env.REACT_APP_ADMIN;
     const menu = [
+        { path: 'admin', name: 'Панель администратора', admin: true },
         { path: 'rooms', name: 'Наши номера' },
         { path: 'booking', name: 'Забронировать', noadmin: true },
-        { path: 'admin', name: 'Панель администратора', admin: true },
         { path: 'contacts', name: 'Контакты' }
     ];
     return (
