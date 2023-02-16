@@ -4,7 +4,6 @@
     "description": "The application for booking hotel rooms",
     "author": "Dima Baulin <nonfermata@gmail.com>",
     "main": "index.js",
-    "start_url": "/",
     "private": true,
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.1",
