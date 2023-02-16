@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const chalk = require('chalk');
 const cors = require('cors');
-// const path = require('path');
+const path = require('path');
 const config = require('config');
 const mongoose = require('mongoose');
 const initDataBase = require('./startUp/initDataBase');
