@@ -18,7 +18,7 @@ E-mail: [nonfermata@gmail.com](mailto:nonfermata@gmail.com)
 - Moment
 - Lodash
 - React Toastify
-– React Loading Skeleton
+- React Loading Skeleton
 - PropTypes
 - Prettier
 - ESLint
