@@ -2,7 +2,7 @@
 /working
 
 #idea
-/.idea
+.idea
 
 # dependencies
 /client/node_modules
