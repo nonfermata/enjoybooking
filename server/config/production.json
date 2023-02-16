@@ -1,6 +1,6 @@
 {
     "port": 8080,
-    "mongoUri": "mongodb+srv://nonfermata:weBlomTerra316@cluster0.pq1mkoh.mongodb.net/app?retryWrites=true&w=majority",
+    "mongoUri": "mongodb+srv://nonfermata:diMurPoem137@cluster0.oy01rye.mongodb.net/app?retryWrites=true&w=majority",
     "accessSecret": "she loves you yeh",
     "refreshSecret": "all my loving i will send to you"
 }
