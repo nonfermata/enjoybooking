@@ -2,7 +2,7 @@
     "name": "enjoy-booking-server",
     "version": "1.0.0",
     "description": "Server for the hotel room booking app",
-    "main": "app.js",
+    "main": "index.js",
     "scripts": {
         "format": "npx prettier --write .",
         "start": "cross-env NODE_ENV=production node app.js",

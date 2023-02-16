@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/enjoy-booking/static/css/main.53e93b54.css",
-    "main.js": "/enjoy-booking/static/js/main.5081d30c.js",
-    "static/media/title-image.png": "/enjoy-booking/static/media/title-image.2ff4b6ff42aeae10f2ad.png",
-    "static/media/dual_ring_loader.gif": "/enjoy-booking/static/media/dual_ring_loader.405fb2694364dfe28f9b.gif",
-    "static/media/logo.png": "/enjoy-booking/static/media/logo.bac64287bc41c163b572.png",
-    "static/media/logo-home.png": "/enjoy-booking/static/media/logo-home.97ce946fcc461aa6373e.png",
-    "index.html": "/enjoy-booking/index.html",
-    "main.53e93b54.css.map": "/enjoy-booking/static/css/main.53e93b54.css.map",
-    "main.5081d30c.js.map": "/enjoy-booking/static/js/main.5081d30c.js.map"
+    "main.css": "/static/css/main.53e93b54.css",
+    "main.js": "/static/js/main.40757d3a.js",
+    "static/media/title-image.png": "/static/media/title-image.2ff4b6ff42aeae10f2ad.png",
+    "static/media/dual_ring_loader.gif": "/static/media/dual_ring_loader.405fb2694364dfe28f9b.gif",
+    "static/media/logo.png": "/static/media/logo.bac64287bc41c163b572.png",
+    "static/media/logo-home.png": "/static/media/logo-home.97ce946fcc461aa6373e.png",
+    "index.html": "/index.html",
+    "main.53e93b54.css.map": "/static/css/main.53e93b54.css.map",
+    "main.40757d3a.js.map": "/static/js/main.40757d3a.js.map"
   },
   "entrypoints": [
     "static/css/main.53e93b54.css",
-    "static/js/main.5081d30c.js"
+    "static/js/main.40757d3a.js"
   ]
 }
