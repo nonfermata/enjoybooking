@@ -39,26 +39,19 @@ const RoomBrief = ({
     const getTopButtonSVG = () => {
         if (parent === 'rooms') {
             return isFavourite ? heart.filled : heart.contoured;
-        } else if (parent === 'favourites') {
+        } else {
             return cross;
         }
     };
     const getTopButtonTitle = () => {
-        if (parent === 'favourites') {
-            return 'Удалить из Избранного';
-        } else if (parent === 'rooms') {
-            return isFavourite
-                ? 'Удалить из Избранного'
-                : 'Добавить в Избранное';
-        }
+        return parent === 'rooms' && !isFavourite
+            ? 'Добавить в Избранное'
+            : 'Удалить из Избранного';
     };
     const handleFavouriteChange = async (event) => {
         event.stopPropagation();
         try {
-            const newUserData = {
-                ...currentUser,
-                favourites: updateFavourites(currentUser.favourites, _id)
-            };
+            const newUserData = updateFavourites(currentUser, _id);
             await updateUserData(newUserData);
         } catch (e) {
             console.log(e.message);

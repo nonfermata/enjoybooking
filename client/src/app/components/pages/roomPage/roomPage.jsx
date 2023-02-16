@@ -52,10 +52,7 @@ const RoomPage = () => {
 
     const handleFavouriteChange = async () => {
         try {
-            const newUserData = {
-                ...currentUser,
-                favourites: updateFavourites(currentUser.favourites, roomId)
-            };
+            const newUserData = updateFavourites(currentUser, roomId);
             await updateUserData(newUserData);
         } catch (e) {
             console.log(e.message);

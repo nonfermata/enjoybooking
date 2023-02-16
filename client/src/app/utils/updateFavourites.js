@@ -1,11 +1,12 @@
-const updateFavourites = (favourites, id) => {
-    let newFavourites = favourites;
-    if (favourites) {
-        if (favourites.some((item) => item === id)) {
-            newFavourites = favourites.filter((item) => item !== id);
-        } else newFavourites.push(id);
-    } else newFavourites = [id];
-    return newFavourites;
+const updateFavourites = (user, roomId) => {
+    console.log(process.env);
+    let newFavourites = user.favourites;
+    if (user.favourites) {
+        if (user.favourites.some((item) => item === roomId)) {
+            newFavourites = user.favourites.filter((item) => item !== roomId);
+        } else newFavourites.push(roomId);
+    } else newFavourites = [roomId];
+    return { ...user, favourites: newFavourites };
 };
 
 export default updateFavourites;

@@ -5,25 +5,25 @@ import { useBookings } from '../../../hooks/useBookings';
 import classes from './admin.module.css';
 
 const Admin = () => {
-    const [bookings, setBookings] = useState();
+    const [bookingsIds, setBookingsIds] = useState();
     const { getAllBookings } = useBookings();
     useEffect(() => {
         getAllBookings().then((result) => {
             if (result) {
-                setBookings(result);
+                setBookingsIds(result.map(({ _id }) => _id));
             } else {
-                setBookings([]);
+                setBookingsIds([]);
             }
         });
     }, []);
-    if (bookings) {
+    if (bookingsIds) {
         return (
             <>
                 <div className='mainTitle'>Панель администратора</div>
-                {bookings.length !== 0 ? (
+                {bookingsIds.length !== 0 ? (
                     <div className={classes.adminWrap}>
-                        {bookings.map((item) => (
-                            <RoomExBrief key={item._id} id={item._id} />
+                        {bookingsIds.map((item) => (
+                            <RoomExBrief key={item} id={item} />
                         ))}
                     </div>
                 ) : (
