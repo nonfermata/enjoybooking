@@ -18,7 +18,7 @@ const Home = () => {
                 <img className={classes.image} src={logoHome} alt='Logo' />
             </Link>
             <h1 className={classes.slogan}>
-                Лучшие предложения для комфортного отдыха!
+                Лучшие предложения <span className='no_wrap'>для комфортного отдыха!</span>
             </h1>
         </div>
     );

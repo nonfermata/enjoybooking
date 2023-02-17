@@ -1,0 +1,17 @@
+.icon {
+    display: none;
+    color: var(--base-bg-color);
+    cursor: pointer;
+}
+
+.button {
+}
+
+@media screen and (max-width: 991px) {
+    .icon {
+        display: block;
+    }
+    .button {
+        display: none;
+    }
+}

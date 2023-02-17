@@ -1,5 +1,11 @@
 .mainContentBlock {
-    padding: 30px 40px 70px;
+    padding: 100px 40px 70px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+    .mainContentBlock {
+        padding: 100px 15px 20px;
+    }
 }

@@ -13,4 +13,6 @@ const onAppClickReducer = (state = false, action) => {
     }
 };
 
+export const onAppClicked = () => (state) => state.onAppClick;
+
 export default onAppClickReducer;

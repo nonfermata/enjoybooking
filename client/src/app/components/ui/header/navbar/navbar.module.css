@@ -43,3 +43,9 @@
 .item a.active:after {
     background-color: transparent;
 }
+
+@media screen and (max-width: 991px) {
+    .nav {
+        display: none;
+    }
+}

@@ -1,0 +1,49 @@
+.burgerMenuWrap {
+    display: none;
+    position: relative;
+    margin-top: 10px;
+}
+
+.burger {
+    color: var(--base-bg-color);
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.burgerMenu {
+    position: absolute;
+    width: max-content;
+    list-style: none;
+    background-color: var(--base-blue-color);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    color: var(--base-bg-color);
+    top: 100%;
+    left: -750%;
+    transition: all 0.4s ease;
+}
+
+.burgerMenuVisible {
+    left: -15px;
+}
+
+.item {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.item a.active {
+    color: var(--menu-item-active-color);
+    cursor: default;
+}
+
+@media screen and (max-width: 991px) {
+    .burgerMenuWrap {
+        display: block;
+    }
+}

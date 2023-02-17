@@ -1,5 +1,9 @@
 .headerWrap {
     background-color: var(--base-blue-color);
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+    height: 70px;
 }
 
 .header {
@@ -11,4 +15,12 @@
     padding: 10px 30px 10px 15px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 991px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+    }
 }

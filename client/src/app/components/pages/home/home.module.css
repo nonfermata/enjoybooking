@@ -23,5 +23,16 @@
     margin-top: 40px;
     color: var(--base-blue-color);
     font-size: 1.4rem;
+    line-height: 1.2em;
     font-weight: 300;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .titleImageWrap {
+        min-width: 100%;
+    }
+    .logoWrap {
+        min-width: 90%;
+    }
 }

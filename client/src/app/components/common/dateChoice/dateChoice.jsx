@@ -4,6 +4,7 @@ import MonthBlock from './monthBlock';
 import moment from 'moment';
 import 'moment/locale/ru';
 import { useSelector } from 'react-redux';
+import { onAppClicked } from '../../../../redux/onAppClickReducer';
 import { getMonths } from '../../../utils/renderCalendar';
 import getImpossibleDates from '../../../utils/getImpossibleDates';
 import classes from './dateChoice.module.css';
@@ -22,7 +23,7 @@ const DateChoice = ({
     isStaticCheckIn
 }) => {
     const months = getMonths();
-    const onAppClick = useSelector((state) => state.onAppClick);
+    const onAppClick = useSelector(onAppClicked());
     const [monthPosition, setMonthPosition] = useState(0);
     const [showCalendar, setShowCalendar] = useState(false);
     useEffect(() => {
