@@ -100,18 +100,19 @@
 }
 
 .checkBoxInput + label {
-    display: inline-flex;
-    align-items: flex-start;
+    display: block;
     user-select: none;
 }
 .checkBoxInput + label::before {
     content: '';
     display: block;
-    width: 16px;
+    float: left;
+    width: 14px;
     height: 14px;
     border: 1px solid var(--base-blue-color);
     border-radius: 4px;
     margin-right: 8px;
+    margin-bottom: 40px;
     top: 2px;
     position: relative;
     background-repeat: no-repeat;
@@ -176,4 +177,28 @@
     width: 80px;
     border: 1px solid var(--sand-color);
     border-radius: 5px;
+}
+
+@media screen and (max-width: 770px) {
+    .input,
+    .radioWrap,
+    .checkBoxWrap,
+    .selectAvatarWrap {
+        width: 70%;
+    }
+    .eye {
+        right: 15%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .input,
+    .radioWrap,
+    .checkBoxWrap,
+    .selectAvatarWrap {
+        width: 96%;
+    }
+    .eye {
+        right: 2%;
+    }
 }

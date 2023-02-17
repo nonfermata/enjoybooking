@@ -4,10 +4,10 @@ import { useHistory } from 'react-router-dom';
 import Button from '../button';
 import TopButton from '../topButton';
 import { useAuth } from '../../../hooks/useAuth';
+import updateFavourites from '../../../utils/updateFavourites';
 import heart from '../svg/heart';
 import cross from '../svg/cross';
 import classes from './roomBrief.module.css';
-import updateFavourites from '../../../utils/updateFavourites';
 
 const RoomBrief = ({
     _id,

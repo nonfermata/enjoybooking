@@ -13,11 +13,12 @@
 .burgerMenu {
     position: absolute;
     width: max-content;
+    max-width: 180px;
     list-style: none;
     background-color: var(--base-blue-color);
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 30px 15px;
     color: var(--base-bg-color);
     top: 100%;
     left: -750%;

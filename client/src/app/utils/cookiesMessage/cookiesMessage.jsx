@@ -24,8 +24,8 @@ const CookiesMessage = () => {
         return (
             <div className={classes.messageWrap + ' ' + messageClass}>
                 <div className={classes.message}>
-                    Мы используем на сайте файлы cookies.
-                    <br /> Без них ничего нормально не работает.
+                    Мы используем на сайте <span className="no_wrap">файлы cookies.</span>
+                    <br /> Без них ничего <span className="no_wrap">нормально не работает.</span>
                 </div>
                 <Button onClick={handleClick}>OK</Button>
             </div>

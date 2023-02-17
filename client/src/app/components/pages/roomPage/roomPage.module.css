@@ -1,5 +1,6 @@
 .roomContentWrap {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     gap: 4%;
 }
@@ -101,4 +102,46 @@
 
 .buttonSize {
     font-size: 1.1rem;
+}
+
+@media screen and (max-width: 991px) {
+    .roomContentWrap {
+        justify-content: center;
+    }
+    .leftPartWrap {
+        margin-bottom: 40px;
+        width: 80%;
+    }
+    .roomDescription {
+        width: 80%;
+    }
+    .footerWrap {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .calendarWrap {
+        margin: 0;
+    }
+    .buttonsWrap {
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .footerWrap {
+        display: block;
+    }
+
+    .buttonsWrap {
+        justify-content: flex-start;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+.leftPartWrap, .roomDescription, .footerWrap {
+    width: 100%;
+}
 }

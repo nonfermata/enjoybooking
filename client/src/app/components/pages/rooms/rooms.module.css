@@ -5,3 +5,9 @@
     gap: 2%;
     row-gap: 25px;
 }
+
+@media screen and (max-width: 991px) {
+    .roomsWrap {
+        justify-content: space-evenly;
+    }
+}

@@ -3,7 +3,7 @@
         "listNumber": 1,
         "name": "Двухместный номер «Эконом-1»",
         "capacity": 2,
-        "price": 30,
+        "price": 25,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/01/02e1-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -67,7 +67,7 @@
         "listNumber": 2,
         "name": "Двухместный номер «Эконом-2»",
         "capacity": 2,
-        "price": 30,
+        "price": 25,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/02/02e2-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -127,7 +127,7 @@
         "listNumber": 3,
         "name": "Двухместный номер «Стандарт-1»",
         "capacity": 2,
-        "price": 50,
+        "price": 30,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/03/02s1-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -183,7 +183,7 @@
         "listNumber": 4,
         "name": "Двухместный номер «Стандарт-2»",
         "capacity": 2,
-        "price": 50,
+        "price": 30,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/04/02s2-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -244,7 +244,7 @@
         "listNumber": 5,
         "name": "Трехместный номер «Эконом»",
         "capacity": 3,
-        "price": 50,
+        "price": 30,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/05/03e-1.jpg",
         "briefDescription": [
             "Количество гостей: 3",
@@ -309,7 +309,7 @@
         "listNumber": 6,
         "name": "Трехместный номер «Стандарт»",
         "capacity": 3,
-        "price": 80,
+        "price": 40,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/06/03s-1.jpg",
         "briefDescription": [
             "Количество гостей: 3",
@@ -369,7 +369,7 @@
         "listNumber": 7,
         "name": "Двухместные апартаменты",
         "capacity": 2,
-        "price": 100,
+        "price": 50,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/07/ap-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -430,7 +430,7 @@
         "listNumber": 8,
         "name": "Семейный номер с собственной кухней",
         "capacity": 4,
-        "price": 120,
+        "price": 80,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/08/fam-1.jpg",
         "briefDescription": [
             "Количество гостей: 4",
@@ -492,10 +492,10 @@
     },
     {
         "listNumber": 9,
-        "name": "Апартаменты «Люкс»",
+        "name": "Апартаменты «Люкс-1»",
         "capacity": 4,
-        "price": 150,
-        "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/09/lux-1.jpg",
+        "price": 100,
+        "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/09/lux1-1.jpg",
         "briefDescription": [
             "Количество гостей: 4",
             "Площадь номера: 30 кв. м",
@@ -506,27 +506,27 @@
         "photos": [
             {
                 "orient": "hor",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux-1.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux1-1.jpg"
             },
             {
                 "orient": "vert",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux-2.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux1-2.jpg"
             },
             {
                 "orient": "hor",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux-3.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux1-3.jpg"
             },
             {
                 "orient": "vert",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux-4.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux1-4.jpg"
             },
             {
                 "orient": "vert",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux-5.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux1-5.jpg"
             },
             {
                 "orient": "vert",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux-6.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/09/lux1-6.jpg"
             }
         ],
         "amenitiesInside": [
@@ -564,10 +564,83 @@
     },
     {
         "listNumber": 10,
-        "name": "Апартаменты «Супер-люкс»",
+        "name": "Апартаменты «Люкс-2»",
+        "capacity": 4,
+        "price": 100,
+        "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/10/lux2-1.jpg",
+        "briefDescription": [
+            "Количество гостей: 4",
+            "Площадь номера: 60 кв. м",
+            "1 двуспальная кровать, 2 односпальные кровати",
+            "Санузел в номере",
+            "Кухня",
+            "Мини-бар"
+        ],
+        "photos": [
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/10/lux2-1.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/10/lux2-2.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/10/lux2-3.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/10/lux2-4.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/10/lux2-5.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/10/lux2-6.jpg"
+            }
+        ],
+        "amenitiesInside": [
+            "Бесплатный Wi-Fi",
+            "Постельное белье",
+            "Полотенца",
+            "Телевизор",
+            "Кондиционер",
+            "Шкаф или гардероб",
+            "Гладильные принадлежности",
+            "Кухня",
+            "Электрическя плита",
+            "Электрический чайник",
+            "Микроволновая печь",
+            "Холодильник",
+            "Кухонные принадлежности",
+            "Мини-бар",
+            "Душ",
+            "Фен",
+            "Туалетная бумага",
+            "Шампунь",
+            "Гель для душа"
+        ],
+        "amenitiesOutside": [
+            "Круглосуточная стойка регистрации",
+            "Бесплатная парковка",
+            "Круглосуточная охрана",
+            "Места для курения",
+            "Ресторан",
+            "Гостиный уголок",
+            "Звукоизоляция",
+            "Хранение багажа",
+            "Трансфер"
+        ]
+    },
+    {
+        "listNumber": 11,
+        "name": "Апартаменты «Супер-люкс-1»",
         "capacity": 5,
-        "price": 200,
-        "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/10/delux-1.jpg",
+        "price": 120,
+        "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/11/delux1-1.jpg",
         "briefDescription": [
             "Количество гостей: 5",
             "Площадь номера: 60 кв. м",
@@ -579,19 +652,96 @@
         "photos": [
             {
                 "orient": "hor",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/10/delux-1.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/11/delux1-1.jpg"
             },
             {
                 "orient": "hor",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/10/delux-2.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/11/delux1-2.jpg"
             },
             {
                 "orient": "hor",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/10/delux-3.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/11/delux1-3.jpg"
             },
             {
                 "orient": "hor",
-                "url": "https://bgvmusic.ru/temp-hotel-photos/10/delux-4.jpg"
+                "url": "https://bgvmusic.ru/temp-hotel-photos/11/delux1-4.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/11/delux1-5.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/11/delux1-6.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/11/delux1-7.jpg"
+            }
+        ],
+        "amenitiesInside": [
+            "Бесплатный Wi-Fi",
+            "Постельное белье",
+            "Полотенца",
+            "Телевизор",
+            "Кондиционер",
+            "Шкаф или гардероб",
+            "Гладильные принадлежности",
+            "Кухня",
+            "Электрическя плита",
+            "Электрический чайник",
+            "Микроволновая печь",
+            "Холодильник",
+            "Кухонные принадлежности",
+            "Мини-бар",
+            "Душ",
+            "Фен",
+            "Туалетная бумага",
+            "Шампунь",
+            "Гель для душа"
+        ],
+        "amenitiesOutside": [
+            "Круглосуточная стойка регистрации",
+            "Бесплатная парковка",
+            "Круглосуточная охрана",
+            "Места для курения",
+            "Ресторан",
+            "Гостиный уголок",
+            "Звукоизоляция",
+            "Хранение багажа",
+            "Трансфер"
+        ]
+    },
+    {
+        "listNumber": 12,
+        "name": "Апартаменты «Супер-люкс-2»",
+        "capacity": 5,
+        "price": 120,
+        "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/12/delux2-1.jpg",
+        "briefDescription": [
+            "Количество гостей: 5",
+            "Площадь номера: 60 кв. м",
+            "1 двуспальная кровать, 3 односпальные кровати",
+            "Санузел в номере",
+            "Кухня",
+            "Мини-бар"
+        ],
+        "photos": [
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/12/delux2-1.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/12/delux2-2.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/12/delux2-3.jpg"
+            },
+            {
+                "orient": "hor",
+                "url": "https://bgvmusic.ru/temp-hotel-photos/12/delux2-4.jpg"
             }
         ],
         "amenitiesInside": [
