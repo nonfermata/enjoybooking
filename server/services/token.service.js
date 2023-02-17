@@ -32,9 +32,9 @@ class TokenService {
             return null;
         }
     }
-    async findToken(token) {
+    async findToken(refreshToken) {
         try {
-            return await Token.findOne({ token });
+            return await Token.findOne({ refreshToken });
         } catch (e) {
             return null;
         }
