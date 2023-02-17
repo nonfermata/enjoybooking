@@ -1,5 +1,5 @@
 const updateFavourites = (user, roomId) => {
-    console.log(process.config);
+    console.log(process.env);
     let newFavourites = user.favourites;
     if (user.favourites) {
         if (user.favourites.some((item) => item === roomId)) {
