@@ -33,6 +33,7 @@ http.interceptors.request.use(
             }
         } else {
             if (isExpired) {
+                console.log('Expired');
                 const data = await authService.refresh();
                 localStorageService.setTokens(data);
             }
