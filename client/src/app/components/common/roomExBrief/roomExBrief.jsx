@@ -20,8 +20,7 @@ const RoomExBrief = ({ id }) => {
     const { getBookingById, updateBooking } = useBookings();
     const { getUserById } = useAuth();
     const { getRoomById } = useRooms();
-    const { currentUser } = useAuth();
-    const isAdmin = currentUser._id === process.env.REACT_APP_ADMIN;
+    const { isAdmin } = useAuth();
 
     useEffect(() => {
         getBookingById(id).then((result) => setBooking(result));

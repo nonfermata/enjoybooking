@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
 const ProtectedRoute = ({ component: Component, children, ...rest }) => {
-    const { currentUser } = useAuth();
+    const { currentUser, isAdmin } = useAuth();
     return (
         <Route
             {...rest}
@@ -19,9 +19,9 @@ const ProtectedRoute = ({ component: Component, children, ...rest }) => {
                         />
                     );
                 } else if (
-                    (currentUser._id !== process.env.REACT_APP_ADMIN &&
+                    (!isAdmin &&
                         props.location.pathname === '/admin') ||
-                    (currentUser._id === process.env.REACT_APP_ADMIN &&
+                    (isAdmin &&
                         props.location.pathname === '/booking')
                 ) {
                     return <Redirect to='/rooms' />;

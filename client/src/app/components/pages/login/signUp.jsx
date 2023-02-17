@@ -105,7 +105,7 @@ const SignUp = () => {
         event.preventDefault();
         if (!validate()) return;
         try {
-            await signUp(data);
+            await signUp({ ...data, type: 'ordinary' });
             history.push('/booking');
         } catch (e) {
             setErrors(e);

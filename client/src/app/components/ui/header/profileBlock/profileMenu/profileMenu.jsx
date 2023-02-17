@@ -8,14 +8,13 @@ import logout from '../../../../common/svg/logout';
 import classes from './profileMenu.module.css';
 
 const ProfileMenu = () => {
-    const { currentUser } = useAuth();
-    const adminStatus = currentUser._id === process.env.REACT_APP_ADMIN;
+    const { isAdmin } = useAuth();
     const menu = [
         {
             icon: bookings,
             path: 'my-bookings',
             name: 'Мои бронирования',
-            noadmin: true
+            adminDenied: true
         },
         {
             icon: heart.contoured,
@@ -33,8 +32,8 @@ const ProfileMenu = () => {
             name: 'Выход'
         }
     ];
-    const menuHTML = menu.map(({ icon, path, name, noadmin }) => {
-        if (adminStatus && noadmin) {
+    const menuHTML = menu.map(({ icon, path, name, adminDenied }) => {
+        if (isAdmin && adminDenied) {
             return null;
         } else {
             return (

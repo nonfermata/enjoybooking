@@ -13,7 +13,7 @@ import heart from '../../common/svg/heart';
 import classes from './roomPage.module.css';
 
 const RoomPage = () => {
-    const { currentUser, updateUserData } = useAuth();
+    const { currentUser, isAdmin, updateUserData } = useAuth();
     const { roomId } = useParams();
     const room = useRooms().getRoomById(roomId);
     const { getRoomBookings } = useBookings();
@@ -61,7 +61,7 @@ const RoomPage = () => {
 
     const isBookingButton =
         !currentUser ||
-        (currentUser && currentUser._id !== process.env.REACT_APP_ADMIN);
+        (currentUser && !isAdmin);
 
     if (room) {
         return (

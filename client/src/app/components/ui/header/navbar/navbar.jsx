@@ -4,9 +4,8 @@ import { useAuth } from '../../../../hooks/useAuth';
 import classes from './navbar.module.css';
 
 const Navbar = () => {
-    const { currentUser } = useAuth();
-    const adminStatus =
-        currentUser && currentUser._id === process.env.REACT_APP_ADMIN;
+    const { currentUser, isAdmin } = useAuth();
+    const adminStatus = currentUser && isAdmin;
     const menu = [
         { path: 'admin', name: 'Панель администратора', admin: true },
         { path: 'rooms', name: 'Наши номера' },

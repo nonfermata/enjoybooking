@@ -22,7 +22,7 @@ router.patch('/update/:bookingId', authMiddleware, async (req, res) => {
         const booking = await Booking.findById(bookingId);
         if (
             req.user._id === booking.userId.toString() ||
-            req.user._id === process.env.SERVER_APP_ADMIN
+            req.user.type === 'admin'
         ) {
             const updatedBooking = await Booking.findByIdAndUpdate(
                 bookingId,

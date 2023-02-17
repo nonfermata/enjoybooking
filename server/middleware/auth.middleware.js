@@ -1,6 +1,7 @@
 const tokenService = require('../services/token.service');
+const User = require('../models/User')
 
-const authMiddleware = (req, res, next) => {
+const authMiddleware = async (req, res, next) => {
     if (req.method === 'OPTIONS') {
         return next();
     }
@@ -13,7 +14,8 @@ const authMiddleware = (req, res, next) => {
         if (!data) {
             return res.status(401).json({ message: 'Unauthorized' });
         }
-        req.user = data;
+        const user = await User.findOne({ _id: data._id });
+        req.user = { ...data, type: user.type };
         next();
     } catch (e) {
         return res.status(401).json({ message: 'Unauthorized' });

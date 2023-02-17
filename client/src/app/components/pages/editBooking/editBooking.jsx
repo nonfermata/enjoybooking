@@ -25,14 +25,13 @@ const EditBooking = () => {
     const ref = useRef({});
     const { bookingId } = useParams();
     const { getRoomById } = useRooms();
-    const { currentUser } = useAuth();
+    const { currentUser, isAdmin } = useAuth();
     const { getRoomBookings, getBookingById, updateBooking } = useBookings();
     const [isChanged, setIsChanged] = useState(false);
     const [booking, setBooking] = useState({});
     const [activeCalendar, setActiveCalendar] = useState();
     const [occupiedDates, setOccupiedDates] = useState();
     const [maxPersonsClass, setMaxPersonsClass] = useState('hidden');
-    const isAdmin = currentUser._id === process.env.REACT_APP_ADMIN;
     const dateNow = Date.now();
     useEffect(() => {
         getBookingById(bookingId).then((result) => {

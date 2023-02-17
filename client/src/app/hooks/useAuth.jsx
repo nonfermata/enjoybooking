@@ -13,6 +13,7 @@ export const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
     const [currentUser, setUser] = useState();
+    const [isAdmin, setIsAdmin] = useState(false);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const history = useHistory();
@@ -30,7 +31,10 @@ const AuthProvider = ({ children }) => {
     async function getUserData() {
         try {
             const data = await usersService.getCurrentUser();
-            setUser(data);
+            await setUser(data);
+            if (data) {
+                setIsAdmin(data.type === 'admin');
+            }
         } catch (e) {
             errorCatcher(e);
         } finally {
@@ -130,6 +134,7 @@ const AuthProvider = ({ children }) => {
                 signUp,
                 logOut,
                 currentUser,
+                isAdmin,
                 updateUserData,
                 getUserById,
                 getAllUsers
