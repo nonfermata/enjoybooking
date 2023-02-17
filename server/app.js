@@ -34,7 +34,7 @@ async function start() {
         console.log(chalk.greenBright(`MongoDB successfully connected.`));
         app.listen(PORT, () =>
             console.log(
-                chalk.green(`Server has been started on port ${PORT}...`)
+                chalk.green(`Server has been started.`)
             )
         );
     } catch (e) {
