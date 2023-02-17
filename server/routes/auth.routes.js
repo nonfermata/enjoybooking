@@ -4,7 +4,7 @@ const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const router = express.Router({ mergeParams: true });
 const tokenService = require('../services/token.service');
-const getServerError = require('../utils/getServerError')
+const getServerError = require('../utils/getServerError');
 
 function getErrors(req, res) {
     const errors = validationResult(req);
@@ -99,6 +99,7 @@ function isTokenInvalid(data, dbToken) {
 router.post('/token', async (req, res) => {
     try {
         const { refresh_token: refreshToken } = req.body;
+        console.log(refreshToken);
         const data = tokenService.validateRefresh(refreshToken);
         const dbToken = await tokenService.findToken(refreshToken);
 
