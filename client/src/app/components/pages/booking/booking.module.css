@@ -17,3 +17,21 @@
     font-size: 1rem;
     margin: 0 30px;
 }
+
+@media screen and (max-width: 480px) {
+    .subtitle {
+        margin-top: -20px;
+    }
+    .datesWrap {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    .dash {
+        width: 150px;
+        text-align: center;
+    }
+    .totalNights {
+        margin: 20px 0 0;
+    }
+}

@@ -23,17 +23,17 @@ const RoomBrief = ({
         currentUser &&
         currentUser.favourites &&
         currentUser.favourites.some((item) => item === _id);
-    const [topButtonStyle, setTopButtonStyle] = useState(
+    const [topButtonClass, setTopButtonClass] = useState(
         currentUser && isFavourite && parent === 'rooms'
-            ? {}
-            : { display: 'none' }
+            ? ''
+            : 'btnHidden'
     );
     const showTopButton = () => {
-        setTopButtonStyle({});
+        setTopButtonClass('');
     };
     const hideTopButton = () => {
         if (!isFavourite || parent === 'favourites') {
-            setTopButtonStyle({ display: 'none' });
+            setTopButtonClass('btnHidden');
         }
     };
     const getTopButtonSVG = () => {
@@ -71,7 +71,8 @@ const RoomBrief = ({
         >
             {currentUser && parent !== 'setBooking' && (
                 <TopButton
-                    style={topButtonStyle}
+                    parent={parent}
+                    addedClass={topButtonClass}
                     title={getTopButtonTitle()}
                     onClick={handleFavouriteChange}
                 >

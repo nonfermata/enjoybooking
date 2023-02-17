@@ -95,12 +95,7 @@ const RoomPage = () => {
                                         : 'Добавить в Избранное'
                                 }
                                 onClick={() => handleFavouriteChange(room._id)}
-                                style={{
-                                    top: '45px',
-                                    right: '10px',
-                                    color: 'var(--orange-color)',
-                                    backgroundColor: 'transparent'
-                                }}
+                                addedClass='pageBtnFavourites'
                             >
                                 {getTopButtonSVG()}
                             </TopButton>

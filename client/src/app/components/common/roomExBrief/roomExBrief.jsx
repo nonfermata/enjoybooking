@@ -76,7 +76,7 @@ const RoomExBrief = ({ id }) => {
             extStatus.name = 'отменено администратором';
             extStatus.value = 'adminCancelled';
         }
-        const isEdit =
+        const isEditable =
             extStatus.value === 'upcoming' || extStatus.value === 'now';
         return (
             <div className={classes.bookingWrap}>
@@ -91,12 +91,12 @@ const RoomExBrief = ({ id }) => {
                             ' - ' +
                             moment(booking.checkOut).format('DD.MM.YYYY')}
                     </div>
-                    |
+                    <p className={classes.separator}>|</p>
                     <div className={classes.persons}>
                         {booking.persons}{' '}
                         {getWordByNumber(Number(booking.persons), 'guests')}
                     </div>
-                    |
+                    <p className={classes.separator}>|</p>
                     <div className={classes.price}>
                         <span className='fw600'>
                             ${room.price * totalNights}
@@ -136,7 +136,7 @@ const RoomExBrief = ({ id }) => {
                                 </p>
                             </>
                         )}
-                        {isEdit && (
+                        {isEditable && (
                             <div className={classes.editWrap}>
                                 <Link to={'/edit-booking/' + id}>
                                     <p

@@ -19,3 +19,9 @@
     font-size: 1rem;
     margin: 10px 0 30px;
 }
+
+@media screen and (max-width: 480px) {
+    .setBookingWrap {
+        flex-wrap: wrap;
+    }
+}

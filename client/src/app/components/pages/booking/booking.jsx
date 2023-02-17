@@ -56,7 +56,7 @@ const Booking = () => {
                     activateCalendar={activateCalendar}
                     occupiedDates={[]}
                 />
-                <p>–</p>
+                <p className={classes.dash}>–</p>
                 <DateChoice
                     choiceName='checkOut'
                     choiceValue={booking.checkOut}

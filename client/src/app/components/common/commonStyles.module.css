@@ -87,3 +87,20 @@
     cursor: pointer;
     transform: scale(1.125);
 }
+
+.btnHidden {
+    display: none;
+}
+
+.pageBtnFavourites {
+    top: 45px;
+    right: 10px;
+    color: var(--orange-color);
+    background-color: transparent
+}
+
+@media screen and (max-width: 770px) {
+    .btnHidden {
+        display: block;
+    }
+}

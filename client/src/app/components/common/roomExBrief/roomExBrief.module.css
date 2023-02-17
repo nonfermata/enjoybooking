@@ -136,3 +136,22 @@
 .editBooking {
     color: var(--semi-orange-color);
 }
+
+@media screen and (max-width: 480px) {
+    .bookingWrap {
+        width: 100%;
+    }
+    .datesAndPersonsWrap {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .imgAndDecrWrap {
+        flex-direction: column;
+    }
+    .imgWrap {
+        height: 130px;
+    }
+    .separator {
+        display: none;
+    }
+}

@@ -145,7 +145,7 @@ const EditBooking = () => {
                             />
                         )}
 
-                        <p>–</p>
+                        <p className={classes.dash}>–</p>
                         <DateChoice
                             isStaticCheckIn={isStaticCheckIn}
                             occupiedDates={occupiedDates}
@@ -206,7 +206,7 @@ const EditBooking = () => {
                             }
                         >
                             Максимальная вместимость номера –{' '}
-                            <span className='fw600'>
+                            <span className='fw600 no_wrap'>
                                 {room.capacity}{' '}
                                 {getWordByNumber(room.capacity, 'people')}
                             </span>

@@ -121,3 +121,9 @@
     background-color: var(--base-blue-color);
     color: var(--base-bg-color);
 }
+
+@media screen and (max-width: 480px) {
+    .calendarWindow {
+        width: 250px;
+    }
+}

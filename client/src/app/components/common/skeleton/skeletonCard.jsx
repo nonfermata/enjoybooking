@@ -8,6 +8,8 @@ const SkeletonCard = () => {
         <div className={classes.skeletonWrap}>
             <Skeleton className={classes.status} />
             <Skeleton className={classes.title} />
+            <Skeleton className={classes.mobileTitle} />
+            <Skeleton className={classes.mobileTitle} />
             <div className={classes.contentWrap}>
                 <Skeleton className={classes.image} />
                 <div className={classes.content}>

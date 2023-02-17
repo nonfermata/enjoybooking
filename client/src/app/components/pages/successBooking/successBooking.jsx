@@ -7,7 +7,8 @@ const SuccessBooking = () => {
     return (
         <>
             <div className='mainTitle green'>
-                Поздравляем, Ваше бронирование подтверждено!
+                Поздравляем, <span className='no_wrap'>Ваше бронирование</span>{' '}
+                подтверждено!
             </div>
             <RoomExBrief id={bookingId} />
         </>
