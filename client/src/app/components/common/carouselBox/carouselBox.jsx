@@ -24,9 +24,13 @@ const CarouselBox = ({ children: gallery }) => {
         setTouchPosition(null);
     };
 
+    // Swiping Mode
+    const galleryClass = classes.allPhotos;
+    // Fading Mode
+    // const [galleryClass, setGalleryClass] = useState(classes.allPhotos);
+
     const [galleryOffset, setGalleryOffset] = useState(0);
     const [indicatorActiveIndex, setIndicatorActiveIndex] = useState(0);
-    const [galleryClass, setGalleryClass] = useState(classes.allPhotos);
     const indicatorsOffset =
         (gallery.length * 26 + (gallery.length - 1) * 6) / 2;
 
@@ -50,13 +54,19 @@ const CarouselBox = ({ children: gallery }) => {
         setIndicatorActiveIndex(index);
     };
 
+    // Swiping Mode
     useEffect(() => {
-        setGalleryClass(classes.allPhotos + ' ' + classes.hidden);
-        setTimeout(() => {
-            setGalleryOffset(-(indicatorActiveIndex * 100));
-            setGalleryClass(classes.allPhotos);
-        }, 70);
+        setGalleryOffset(-(indicatorActiveIndex * 100));
     }, [indicatorActiveIndex]);
+
+    // Fading Mode
+    // useEffect(() => {
+    //     setGalleryClass(classes.allPhotos + ' ' + classes.hidden);
+    //     setTimeout(() => {
+    //         setGalleryOffset(-(indicatorActiveIndex * 100));
+    //         setGalleryClass(classes.allPhotos);
+    //     }, 70);
+    // }, [indicatorActiveIndex]);
 
     const indicatorsHTML = (
         <div

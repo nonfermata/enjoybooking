@@ -15,7 +15,10 @@
     width: 100%;
     display: flex;
     opacity: 1;
-    transition: opacity 0.6s ease;
+    /*Swiping Mode*/
+    transition: all 0.6s ease;
+    /*Fading Mode*/
+    /*transition: opacity 0.6s ease;*/
 }
 
 .hidden {
@@ -80,7 +83,7 @@
     background-color: var(--slider-indicators-color);
 }
 
-@media screen and (max-width: 770px){
+@media screen and (max-width: 770px) {
     .control {
         display: none;
     }
