@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Button from '../../components/common/button';
+import Button from '../../common/button';
 import classes from './cookiesMessage.module.css';
 
 const CookiesMessage = () => {

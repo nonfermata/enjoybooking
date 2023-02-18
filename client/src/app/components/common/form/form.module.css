@@ -143,8 +143,13 @@
 .avatarDecr {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: flex-end;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.avatarLabel {
+    /*color: var(--base-blue-color);*/
 }
 
 .avaBtnWrap {

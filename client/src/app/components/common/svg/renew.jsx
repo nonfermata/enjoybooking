@@ -7,8 +7,8 @@ const renew = (
         viewBox='0 0 24 24'
         strokeWidth='1.5'
         stroke='currentColor'
-        width='24'
-        height='24'
+        width='28'
+        height='28'
     >
         <path
             strokeLinecap='round'

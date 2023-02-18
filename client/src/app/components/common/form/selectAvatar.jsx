@@ -17,8 +17,9 @@ const SelectAvatar = ({ onChange, name, value }) => {
     };
     return (
         <div className={classes.selectAvatarWrap}>
+            <img className={classes.avatar} src={value} alt='Image' />
             <div className={classes.avatarDecr}>
-                <p>Ваша аватарка:</p>
+                <p className={classes.avatarLabel}>изменить картинку</p>
                 <div
                     className={classes.avaBtnWrap + ' ' + btnClass}
                     onClick={handleChangeAvatar}
@@ -27,7 +28,6 @@ const SelectAvatar = ({ onChange, name, value }) => {
                     {renew}
                 </div>
             </div>
-            <img className={classes.avatar} src={value} alt='Image' />
         </div>
     );
 };

@@ -6,7 +6,7 @@ import Header from './components/ui/header/header';
 import RoomsProvider from './hooks/useRooms';
 import AuthProvider from './hooks/useAuth';
 import BookingsProvider from './hooks/useBookings';
-import CookiesMessage from './utils/cookiesMessage/cookiesMessage';
+import CookiesMessage from './components/ui/cookiesMessage/cookiesMessage';
 import isOnAppClicked from './utils/isOnAppClicked';
 import { onAppClick } from '../redux/onAppClickReducer';
 import 'react-toastify/dist/ReactToastify.css';
