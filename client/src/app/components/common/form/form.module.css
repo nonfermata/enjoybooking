@@ -13,7 +13,7 @@
     top: -1.2rem;
     left: 30%;
     font-size: 0.9rem;
-    color: #ff8000;
+    color: var(--orange-color);
     user-select: none;
 }
 
@@ -191,6 +191,9 @@
     .selectAvatarWrap {
         width: 70%;
     }
+    .error {
+        left: 15%;
+    }
     .eye {
         right: 15%;
     }
@@ -202,6 +205,9 @@
     .checkBoxWrap,
     .selectAvatarWrap {
         width: 96%;
+    }
+    .error {
+        left: 2%;
     }
     .eye {
         right: 2%;

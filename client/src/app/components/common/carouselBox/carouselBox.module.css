@@ -79,3 +79,9 @@
     width: 100%;
     background-color: var(--slider-indicators-color);
 }
+
+@media screen and (max-width: 770px){
+    .control {
+        display: none;
+    }
+}
