@@ -16,16 +16,17 @@ const CarouselBox = ({ children: gallery }) => {
         const currentTouch = e.touches[0].clientX;
         const diff = touchDown - currentTouch;
         if (diff > 5) {
-            handleNextPhoto();
+            handleSwipeNext();
         }
         if (diff < -5) {
-            handlePreviousPhoto();
+            handleSwipePrevious();
         }
         setTouchPosition(null);
     };
 
     // Swiping Mode
     const galleryClass = classes.allPhotos;
+
     // Fading Mode
     // const [galleryClass, setGalleryClass] = useState(classes.allPhotos);
 
@@ -34,7 +35,7 @@ const CarouselBox = ({ children: gallery }) => {
     const indicatorsOffset =
         (gallery.length * 26 + (gallery.length - 1) * 6) / 2;
 
-    const handlePreviousPhoto = () => {
+    const handleClickPrevious = () => {
         if (galleryOffset === 0) {
             setIndicatorActiveIndex(gallery.length - 1);
         } else {
@@ -42,10 +43,22 @@ const CarouselBox = ({ children: gallery }) => {
         }
     };
 
-    const handleNextPhoto = () => {
+    const handleSwipePrevious = () => {
+        if (galleryOffset !== 0) {
+            setIndicatorActiveIndex(indicatorActiveIndex - 1);
+        }
+    };
+
+    const handleClickNext = () => {
         if (galleryOffset === -(gallery.length - 1) * 100) {
             setIndicatorActiveIndex(0);
         } else {
+            setIndicatorActiveIndex(indicatorActiveIndex + 1);
+        }
+    };
+
+    const handleSwipeNext = () => {
+        if (galleryOffset !== -(gallery.length - 1) * 100) {
             setIndicatorActiveIndex(indicatorActiveIndex + 1);
         }
     };
@@ -95,14 +108,14 @@ const CarouselBox = ({ children: gallery }) => {
             {indicatorsHTML}
             <div
                 className={classes.control + ' ' + classes.previous}
-                onClick={handlePreviousPhoto}
+                onClick={handleClickPrevious}
                 title='Previous photo'
             >
                 &lt;
             </div>
             <div
                 className={classes.control + ' ' + classes.next}
-                onClick={handleNextPhoto}
+                onClick={handleClickNext}
                 title='Next photo'
             >
                 &gt;
