@@ -16,7 +16,7 @@
     display: flex;
     opacity: 1;
     /*Swiping Mode*/
-    transition: all 0.6s ease;
+    transition: all 0.65s ease;
     /*Fading Mode*/
     /*transition: opacity 0.6s ease;*/
 }
