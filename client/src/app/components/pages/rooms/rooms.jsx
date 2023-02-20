@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import RoomBrief from '../../common/roomBrief/roomBrief';
 import Loader from '../../common/loader/loader';
@@ -26,6 +26,9 @@ const Rooms = () => {
         setCurrentPage(page);
     };
     const pageSize = 4;
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [filters]);
     if (filteredRooms) {
         const count = filteredRooms.length;
         const roomsCrops = paginate(filteredRooms, currentPage, pageSize);
