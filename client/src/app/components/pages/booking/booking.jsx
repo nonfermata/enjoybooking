@@ -11,7 +11,7 @@ import {
     setBooking as setBookingToStore,
     getBooking
 } from '../../../../redux/bookingReducer';
-import { personsForBooking as persons } from '../../../utils/selectFieldData';
+import { personsForBooking as persons } from '../../../utils/getSelectFieldList';
 import classes from './booking.module.css';
 moment.locale('ru');
 

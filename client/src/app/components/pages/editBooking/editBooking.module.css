@@ -68,6 +68,15 @@
     font-size: 1rem;
 }
 
+.inputWrap {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+
 @media screen and (max-width: 480px) {
     .datesWrap {
         flex-direction: column;

@@ -4,6 +4,8 @@
         "name": "Двухместный номер «Эконом-1»",
         "capacity": 2,
         "price": 25,
+        "kitchen": false,
+        "bathroom": false,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/01/02e1-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -68,6 +70,8 @@
         "name": "Двухместный номер «Эконом-2»",
         "capacity": 2,
         "price": 25,
+        "kitchen": false,
+        "bathroom": false,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/02/02e2-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -128,6 +132,8 @@
         "name": "Двухместный номер «Стандарт-1»",
         "capacity": 2,
         "price": 30,
+        "kitchen": false,
+        "bathroom": true,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/03/02s1-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -184,6 +190,8 @@
         "name": "Двухместный номер «Стандарт-2»",
         "capacity": 2,
         "price": 30,
+        "kitchen": false,
+        "bathroom": true,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/04/02s2-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -245,6 +253,8 @@
         "name": "Трехместный номер «Эконом»",
         "capacity": 3,
         "price": 30,
+        "kitchen": false,
+        "bathroom": false,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/05/03e-1.jpg",
         "briefDescription": [
             "Количество гостей: 3",
@@ -310,6 +320,8 @@
         "name": "Трехместный номер «Стандарт»",
         "capacity": 3,
         "price": 40,
+        "kitchen": false,
+        "bathroom": true,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/06/03s-1.jpg",
         "briefDescription": [
             "Количество гостей: 3",
@@ -370,6 +382,8 @@
         "name": "Двухместные апартаменты",
         "capacity": 2,
         "price": 50,
+        "kitchen": true,
+        "bathroom": true,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/07/ap-1.jpg",
         "briefDescription": [
             "Количество гостей: 2",
@@ -431,6 +445,8 @@
         "name": "Семейный номер с собственной кухней",
         "capacity": 4,
         "price": 80,
+        "kitchen": true,
+        "bathroom": true,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/08/fam-1.jpg",
         "briefDescription": [
             "Количество гостей: 4",
@@ -495,6 +511,8 @@
         "name": "Апартаменты «Люкс-1»",
         "capacity": 4,
         "price": 100,
+        "kitchen": true,
+        "bathroom": true,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/09/lux1-1.jpg",
         "briefDescription": [
             "Количество гостей: 4",
@@ -567,6 +585,8 @@
         "name": "Апартаменты «Люкс-2»",
         "capacity": 4,
         "price": 100,
+        "kitchen": true,
+        "bathroom": true,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/10/lux2-1.jpg",
         "briefDescription": [
             "Количество гостей: 4",
@@ -640,6 +660,8 @@
         "name": "Апартаменты «Супер-люкс-1»",
         "capacity": 5,
         "price": 120,
+        "kitchen": true,
+        "bathroom": true,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/11/delux1-1.jpg",
         "briefDescription": [
             "Количество гостей: 5",
@@ -717,6 +739,8 @@
         "name": "Апартаменты «Супер-люкс-2»",
         "capacity": 5,
         "price": 120,
+        "kitchen": true,
+        "bathroom": true,
         "mainPhoto": "https://bgvmusic.ru/temp-hotel-photos/12/delux2-1.jpg",
         "briefDescription": [
             "Количество гостей: 5",

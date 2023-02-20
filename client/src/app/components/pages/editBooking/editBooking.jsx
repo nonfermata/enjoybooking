@@ -14,8 +14,8 @@ import { useAuth } from '../../../hooks/useAuth';
 import { useRooms } from '../../../hooks/useRooms';
 import { useBookings } from '../../../hooks/useBookings';
 import getWordByNumber from '../../../utils/getWordByNumber';
-import { personsForBooking as persons } from '../../../utils/selectFieldData';
-import changePhone from '../../common/changePhone';
+import { personsForBooking as persons } from '../../../utils/getSelectFieldList';
+import changePhone from '../../../utils/changePhone';
 import getBlinking from '../../../utils/getBlinking';
 import classes from './editBooking.module.css';
 moment.locale('ru');
@@ -216,18 +216,19 @@ const EditBooking = () => {
                     <div className={classes.phoneLabel}>
                         Контактный телефон:
                     </div>
-                    <TextField
-                        name='userPhone'
-                        value={'+7 ' + booking.userPhone}
-                        onChange={handleChangePhone}
-                        wrapStyle={{ justifyContent: 'flex-start' }}
-                        inputStyle={{
-                            padding: '7px',
-                            border: '1px solid var(--base-blue-color)',
-                            width: '150px',
-                            fontWeight: '600'
-                        }}
-                    />
+                    <div className={classes.inputWrap}>
+                        <TextField
+                            name='userPhone'
+                            value={'+7 ' + booking.userPhone}
+                            onChange={handleChangePhone}
+                            inputStyle={{
+                                padding: '7px',
+                                border: '1px solid var(--base-blue-color)',
+                                width: '150px',
+                                fontWeight: '600'
+                            }}
+                        />
+                    </div>
                     <Button
                         color='blue'
                         onClick={handleSubmit}

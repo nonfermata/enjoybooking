@@ -7,7 +7,7 @@ const CheckBoxField = ({ name, onChange, value, children }) => {
         onChange(name, target.checked);
     };
     return (
-        <div className={classes.checkBoxWrap}>
+        <>
             <input
                 className={classes.checkBoxInput}
                 type='checkbox'
@@ -21,7 +21,7 @@ const CheckBoxField = ({ name, onChange, value, children }) => {
             >
                 {children}
             </label>
-        </div>
+        </>
     );
 };
 CheckBoxField.propTypes = {

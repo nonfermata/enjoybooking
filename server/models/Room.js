@@ -6,6 +6,8 @@ const schema = new Schema(
         listNumber: Number,
         capacity: Number,
         price: Number,
+        kitchen: Boolean,
+        bathroom: Boolean,
         mainPhoto: String,
         briefDescription: Array,
         photos: Array,

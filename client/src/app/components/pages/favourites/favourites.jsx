@@ -49,9 +49,8 @@ const Favourites = () => {
                             />
                         ))
                     ) : (
-                        <div className={classes.noFavourites}>
-                            Вы пока ничего не добавили в &quot;Избранное&quot;
-                            :(
+                        <div className='noContent'>
+                            У Вас ничего нет в &quot;Избранном&quot;.
                         </div>
                     )}
                 </div>

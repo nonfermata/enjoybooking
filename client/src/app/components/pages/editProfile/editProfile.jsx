@@ -95,20 +95,24 @@ const EditProfile = () => {
         <form onSubmit={onSubmit}>
             <div className={classes.formContainer}>
                 <p className={classes.title}>Редактировать профиль</p>
-                <TextField
-                    name='name'
-                    value={data.name}
-                    onChange={handleChangeData}
-                    error={errors.name}
-                    placeholder='Ваше имя'
-                />
-                <TextField
-                    name='email'
-                    value={data.email}
-                    onChange={handleChangeData}
-                    error={errors.email}
-                    placeholder='Ваш e-mail'
-                />
+                <div className={classes.inputWrap}>
+                    <TextField
+                        name='name'
+                        value={data.name}
+                        onChange={handleChangeData}
+                        error={errors.name}
+                        placeholder='Ваше имя'
+                    />
+                </div>
+                <div className={classes.inputWrap}>
+                    <TextField
+                        name='email'
+                        value={data.email}
+                        onChange={handleChangeData}
+                        error={errors.email}
+                        placeholder='Ваш e-mail'
+                    />
+                </div>
                 <RadioField
                     label='Ваш пол'
                     options={[

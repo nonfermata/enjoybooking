@@ -89,6 +89,7 @@ const RoomPage = () => {
                     <div className={classes.roomDescription}>
                         {currentUser && (
                             <TopButton
+                                parent='room-page'
                                 title={
                                     isFavourite
                                         ? 'Удалить из Избранного'

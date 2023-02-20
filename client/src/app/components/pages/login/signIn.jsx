@@ -69,21 +69,25 @@ const SignIn = () => {
         <form onSubmit={onSignIn}>
             <div className={classes.formContainer}>
                 <p className={classes.title}>Вход</p>
-                <TextField
-                    name='email'
-                    value={data.email}
-                    onChange={handleChangeData}
-                    placeholder='Введите e-mail'
-                    error={errors.email}
-                />
-                <TextField
-                    type='password'
-                    name='password'
-                    value={data.password}
-                    error={errors.password}
-                    onChange={handleChangeData}
-                    placeholder='Введите пароль'
-                />
+                <div className={classes.inputWrap}>
+                    <TextField
+                        name='email'
+                        value={data.email}
+                        onChange={handleChangeData}
+                        placeholder='Введите e-mail'
+                        error={errors.email}
+                    />
+                </div>
+                <div className={classes.inputWrap}>
+                    <TextField
+                        type='password'
+                        name='password'
+                        value={data.password}
+                        error={errors.password}
+                        onChange={handleChangeData}
+                        placeholder='Введите пароль'
+                    />
+                </div>
                 {enterError && (
                     <p className={classes.enterError}>{enterError}</p>
                 )}

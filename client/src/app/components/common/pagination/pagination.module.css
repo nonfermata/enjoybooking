@@ -1,5 +1,5 @@
 .pagination {
-    margin: 2em auto;
+    margin: 2rem auto;
     width: fit-content;
     list-style: none;
     display: flex;
@@ -25,4 +25,19 @@
 .pagination li.active {
     background-color: var(--base-blue-color);
     color: var(--base-bg-color);
+}
+
+@media screen and (max-width: 991px) {
+    .pagination {
+        width: 100%;
+        margin: 1.3rem 0;
+        padding-right: 25px;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .pagination {
+        padding-right: 10px;
+    }
 }

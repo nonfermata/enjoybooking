@@ -27,7 +27,7 @@ const Admin = () => {
                         ))}
                     </div>
                 ) : (
-                    <div className={classes.noBookings}>
+                    <div className='noContent'>
                         Пока никто ничего не забронировал.
                     </div>
                 )}

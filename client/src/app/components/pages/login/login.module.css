@@ -13,6 +13,15 @@
     font-weight: 300;
 }
 
+.inputWrap {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
 .commonLabel {
     margin-bottom: 15px;
     display: block;
@@ -70,14 +79,24 @@
     margin-bottom: 13px;
 }
 
+.checkBoxWrap {
+    width: 40%;
+    color: var(--dark-grey-color);
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
 @media screen and (max-width: 770px) {
-    .birthdayWrap {
+    .birthdayWrap,
+    .checkBoxWrap {
         width: 70%;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .birthdayWrap {
+    .birthdayWrap,
+    .checkBoxWrap {
         width: 96%;
     }
 }

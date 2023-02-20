@@ -20,6 +20,15 @@
     margin: 10px 0 30px;
 }
 
+.inputWrap {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+
 @media screen and (max-width: 480px) {
     .setBookingWrap {
         flex-wrap: wrap;

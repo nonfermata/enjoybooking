@@ -6,12 +6,6 @@
     row-gap: 25px;
 }
 
-.noFavourites {
-    font-weight: 300;
-    font-size: 1.2rem;
-    margin: 30px 20px;
-}
-
 @media screen and (max-width: 991px) {
     .roomsWrap {
         justify-content: space-evenly;

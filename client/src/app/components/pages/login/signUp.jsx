@@ -10,7 +10,7 @@ import { useAuth } from '../../../hooks/useAuth';
 import validator from '../../../utils/validator';
 import validateDate from '../../../utils/validateDate';
 import getRandomImage from '../../../utils/getRandomImage';
-import { days, months, years } from '../../../utils/selectFieldData';
+import { days, months, years } from '../../../utils/getSelectFieldList';
 import classes from './login.module.css';
 
 const SignUp = () => {
@@ -116,28 +116,34 @@ const SignUp = () => {
         <form onSubmit={onSignUp}>
             <div className={classes.formContainer}>
                 <p className={classes.title}>Регистрация</p>
-                <TextField
-                    name='name'
-                    value={data.name}
-                    onChange={handleChangeData}
-                    error={errors.name}
-                    placeholder='Введите свое имя'
-                />
-                <TextField
-                    name='email'
-                    value={data.email}
-                    onChange={handleChangeData}
-                    error={errors.email}
-                    placeholder='Введите свой e-mail'
-                />
-                <TextField
-                    name='password'
-                    type='password'
-                    value={data.password}
-                    onChange={handleChangeData}
-                    error={errors.password}
-                    placeholder='Придумайте пароль'
-                />
+                <div className={classes.inputWrap}>
+                    <TextField
+                        name='name'
+                        value={data.name}
+                        onChange={handleChangeData}
+                        error={errors.name}
+                        placeholder='Введите свое имя'
+                    />
+                </div>
+                <div className={classes.inputWrap}>
+                    <TextField
+                        name='email'
+                        value={data.email}
+                        onChange={handleChangeData}
+                        error={errors.email}
+                        placeholder='Введите свой e-mail'
+                    />
+                </div>
+                <div className={classes.inputWrap}>
+                    <TextField
+                        name='password'
+                        type='password'
+                        value={data.password}
+                        onChange={handleChangeData}
+                        error={errors.password}
+                        placeholder='Придумайте пароль'
+                    />
+                </div>
                 <div className={classes.birthdayWrap}>
                     <p className={classes.commonLabel}>
                         Укажите дату Вашего рождения
@@ -187,19 +193,19 @@ const SignUp = () => {
                     value={data.image}
                     onChange={handleChangeData}
                 />
-                <CheckBoxField
-                    name='licence'
-                    value={data.licence}
-                    onChange={handleChangeData}
-                    error={errors.licence}
-                >
-                    <span>
+                <div className={classes.checkBoxWrap}>
+                    <CheckBoxField
+                        name='licence'
+                        value={data.licence}
+                        onChange={handleChangeData}
+                        error={errors.licence}
+                    >
                         Подтверждаю согласие с условиями{' '}
                         <a className={classes.licence}>
                             Лицензионного соглашения
                         </a>
-                    </span>
-                </CheckBoxField>
+                    </CheckBoxField>
+                </div>
                 <Button color='blue' disabled={!isValid}>
                     Зарегистрироваться
                 </Button>

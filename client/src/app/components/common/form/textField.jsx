@@ -10,8 +10,8 @@ const TextField = ({
     name,
     value,
     error,
-    wrapStyle,
-    inputStyle
+    inputStyle,
+    isDisabled
 }) => {
     const [isFirstRender, setIsFirstRender] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
@@ -23,8 +23,9 @@ const TextField = ({
         onChange(name, target.value);
     };
     return (
-        <div className={classes.inputWrap} style={wrapStyle}>
+        <>
             <input
+                disabled={isDisabled}
                 className={classes.input}
                 style={inputStyle}
                 type={showPassword ? 'text' : type}
@@ -46,7 +47,7 @@ const TextField = ({
             {error && !isFirstRender && (
                 <p className={classes.error}>{error}</p>
             )}
-        </div>
+        </>
     );
 };
 
@@ -60,8 +61,8 @@ TextField.propTypes = {
     name: PropTypes.string,
     value: PropTypes.string,
     error: PropTypes.string,
-    inputStyle: PropTypes.object,
-    wrapStyle: PropTypes.object
+    isDisabled: PropTypes.bool,
+    inputStyle: PropTypes.object
 };
 
 export default TextField;

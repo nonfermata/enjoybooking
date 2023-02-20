@@ -12,7 +12,7 @@ import { useBookings } from '../../../hooks/useBookings';
 import { useAuth } from '../../../hooks/useAuth';
 import { useRooms } from '../../../hooks/useRooms';
 import { resetBooking } from '../../../../redux/bookingReducer';
-import changePhone from '../../common/changePhone';
+import changePhone from '../../../utils/changePhone';
 import classes from './setBooking.module.css';
 
 moment.locale('ru');
@@ -132,17 +132,18 @@ const SetBooking = () => {
                             <p style={{ marginBottom: '5px' }}>
                                 Контактный телефон:{' '}
                             </p>
-                            <TextField
-                                name='userPhone'
-                                value={'+7 ' + userPhone}
-                                onChange={handleChangePhone}
-                                wrapStyle={{ justifyContent: 'flex-start' }}
-                                inputStyle={{
-                                    padding: '7px',
-                                    width: '150px',
-                                    fontWeight: '600'
-                                }}
-                            />
+                            <div className={classes.inputWrap}>
+                                <TextField
+                                    name='userPhone'
+                                    value={'+7 ' + userPhone}
+                                    onChange={handleChangePhone}
+                                    inputStyle={{
+                                        padding: '7px',
+                                        width: '150px',
+                                        fontWeight: '600'
+                                    }}
+                                />
+                            </div>
                             <Link to='/booking'>
                                 <Button color='blue'>
                                     Изменить бронирование

@@ -7,6 +7,15 @@
     font-size: 1.05rem;
 }
 
+.inputWrap {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
 .title {
     margin-bottom: 50px;
     font-size: 1.5rem;

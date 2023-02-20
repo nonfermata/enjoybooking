@@ -31,7 +31,7 @@ const MyBookings = () => {
                         ))}
                     </div>
                 ) : (
-                    <div className={classes.noBookings}>
+                    <div className='noContent'>
                         Вы пока ничего не бронировали.
                     </div>
                 )}
