@@ -23,9 +23,7 @@ const RoomExBrief = ({ id }) => {
     const { isAdmin } = useAuth();
 
     useEffect(() => {
-        setTimeout(() => {
-            getBookingById(id).then((result) => setBooking(result));
-        }, 1000);
+        getBookingById(id).then((result) => setBooking(result));
     }, []);
 
     useEffect(() => {
