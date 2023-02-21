@@ -4,46 +4,22 @@ import { useSelector, useDispatch } from 'react-redux';
 import CheckBoxField from '../../common/form/checkBoxField';
 import TextField from '../../common/form/textField';
 import Button from '../../common/button';
-import { applyFilters, getFilters } from '../../../../redux/filtersReducer';
+import {
+    applyFilters,
+    getFilters,
+    initialState
+} from '../../../../redux/filtersReducer';
 import changeNumber from '../../../utils/changeNumber';
 import classes from './filters.module.css';
 
 const Filters = () => {
     const dispatch = useDispatch();
     const storeData = useSelector(getFilters());
-    const initialState = {
-        price: { isActive: false, start_price: '', end_price: '' },
-        capacity: { isActive: false, value_capacity: '' },
-        kitchen: { isActive: false },
-        bathroom: { isActive: false }
-    };
-    const [filters, setFilters] = useState(initialState);
-
-    const initialStyle = {
-        padding: '7px',
-        width: '50px',
-        color: 'var(--light-grey-color)'
-    };
-    const initialTextFieldStyle = {
-        price: initialStyle,
-        capacity: initialStyle
-    };
-    const [textFieldStyle, setTextFieldStyle] = useState(initialTextFieldStyle);
+    const [filters, setFilters] = useState(storeData);
+    const textFieldStyle = { padding: '7px', width: '50px' };
+    const inactiveText = 'var(--light-grey-color)';
+    const activeText = 'var(--base-color)';
     const handleActivate = (name, value) => {
-        setTextFieldStyle((prevState) => {
-            return value
-                ? {
-                      ...prevState,
-                      [name]: { ...initialStyle, color: 'var(--base-color)' }
-                  }
-                : {
-                      ...prevState,
-                      [name]: {
-                          ...initialStyle,
-                          color: 'var(--light-grey-color)'
-                      }
-                  };
-        });
         setFilters((prevState) => ({
             ...prevState,
             [name]: { ...storeData[name], isActive: value }
@@ -61,7 +37,6 @@ const Filters = () => {
     };
     const handleReset = () => {
         setFilters(initialState);
-        setTextFieldStyle(initialTextFieldStyle);
     };
     useEffect(() => {
         dispatch(applyFilters(filters));
@@ -84,7 +59,11 @@ const Filters = () => {
                             name='start_price'
                             value={String(filters.price.start_price)}
                             onChange={handleValueChange}
-                            inputStyle={textFieldStyle.price}
+                            inputStyle={
+                                filters.price.isActive
+                                    ? { ...textFieldStyle, color: activeText }
+                                    : { ...textFieldStyle, color: inactiveText }
+                            }
                             isDisabled={!filters.price.isActive}
                         />
                         до
@@ -92,7 +71,11 @@ const Filters = () => {
                             name='end_price'
                             value={String(filters.price.end_price)}
                             onChange={handleValueChange}
-                            inputStyle={textFieldStyle.price}
+                            inputStyle={
+                                filters.price.isActive
+                                    ? { ...textFieldStyle, color: activeText }
+                                    : { ...textFieldStyle, color: inactiveText }
+                            }
                             isDisabled={!filters.price.isActive}
                         />
                     </div>
@@ -109,7 +92,11 @@ const Filters = () => {
                         name='value_capacity'
                         value={String(filters.capacity.value_capacity)}
                         onChange={handleValueChange}
-                        inputStyle={textFieldStyle.capacity}
+                        inputStyle={
+                            filters.capacity.isActive
+                                ? { ...textFieldStyle, color: activeText }
+                                : { ...textFieldStyle, color: inactiveText }
+                        }
                         isDisabled={!filters.capacity.isActive}
                     />
                 </li>

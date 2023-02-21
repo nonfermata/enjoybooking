@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import RoomBrief from '../../common/roomBrief/roomBrief';
 import Loader from '../../common/loader/loader';
 import Pagination from '../../common/pagination/pagination';
-import Filters from '../filters';
+import Filters from '../../ui/filters';
 import { paginate } from '../../../utils/paginate';
 import { useRooms } from '../../../hooks/useRooms';
 import { getFilters } from '../../../../redux/filtersReducer';

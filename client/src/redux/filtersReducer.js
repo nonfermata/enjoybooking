@@ -1,8 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export const initialState = {
+    price: { isActive: false, start_price: '', end_price: '' },
+    capacity: { isActive: false, value_capacity: '' },
+    kitchen: { isActive: false },
+    bathroom: { isActive: false }
+};
+
 const filtersSlice = createSlice({
     name: 'filters',
-    initialState: null,
+    initialState,
     reducers: {
         set(state, action) {
             return { ...action.payload };
