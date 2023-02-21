@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CheckBoxField from '../../common/form/checkBoxField';
@@ -17,20 +16,20 @@ const Filters = () => {
     const storeData = useSelector(getFilters());
     const [filters, setFilters] = useState(storeData);
     const textFieldStyle = { padding: '7px', width: '50px' };
-    const inactiveText = 'var(--light-grey-color)';
     const activeText = 'var(--base-color)';
-    const handleActivate = (name, value) => {
+    const inactiveText = 'var(--light-grey-color)';
+    const handleCheckboxChange = (name, value) => {
         setFilters((prevState) => ({
             ...prevState,
             [name]: { ...storeData[name], isActive: value }
         }));
     };
-    const handleValueChange = (name, value) => {
-        const parentObjectName = name.split('_')[1];
+    const handleInputChange = (name, value) => {
+        const parentName = name.split('_')[1];
         setFilters((prevState) => ({
             ...prevState,
-            [parentObjectName]: {
-                ...prevState[parentObjectName],
+            [parentName]: {
+                ...prevState[parentName],
                 [name]: changeNumber(value)
             }
         }));
@@ -49,7 +48,7 @@ const Filters = () => {
                     <CheckBoxField
                         name='price'
                         value={filters.price.isActive}
-                        onChange={handleActivate}
+                        onChange={handleCheckboxChange}
                     >
                         Цена за ночь ($)
                     </CheckBoxField>
@@ -58,7 +57,7 @@ const Filters = () => {
                         <TextField
                             name='start_price'
                             value={String(filters.price.start_price)}
-                            onChange={handleValueChange}
+                            onChange={handleInputChange}
                             inputStyle={
                                 filters.price.isActive
                                     ? { ...textFieldStyle, color: activeText }
@@ -70,7 +69,7 @@ const Filters = () => {
                         <TextField
                             name='end_price'
                             value={String(filters.price.end_price)}
-                            onChange={handleValueChange}
+                            onChange={handleInputChange}
                             inputStyle={
                                 filters.price.isActive
                                     ? { ...textFieldStyle, color: activeText }
@@ -84,14 +83,14 @@ const Filters = () => {
                     <CheckBoxField
                         name='capacity'
                         value={filters.capacity.isActive}
-                        onChange={handleActivate}
+                        onChange={handleCheckboxChange}
                     >
                         Количество человек, от
                     </CheckBoxField>
                     <TextField
                         name='value_capacity'
                         value={String(filters.capacity.value_capacity)}
-                        onChange={handleValueChange}
+                        onChange={handleInputChange}
                         inputStyle={
                             filters.capacity.isActive
                                 ? { ...textFieldStyle, color: activeText }
@@ -104,7 +103,7 @@ const Filters = () => {
                     <CheckBoxField
                         name='bathroom'
                         value={filters.bathroom.isActive}
-                        onChange={handleActivate}
+                        onChange={handleCheckboxChange}
                     >
                         Санузел в номере
                     </CheckBoxField>
@@ -113,7 +112,7 @@ const Filters = () => {
                     <CheckBoxField
                         name='kitchen'
                         value={filters.kitchen.isActive}
-                        onChange={handleActivate}
+                        onChange={handleCheckboxChange}
                     >
                         Собственная кухня
                     </CheckBoxField>

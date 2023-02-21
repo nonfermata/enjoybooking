@@ -14,11 +14,11 @@ import classes from './rooms.module.css';
 const Rooms = () => {
     const { rooms } = useRooms();
     const filters = useSelector(getFilters());
-    const filteredRooms = filters ? getFilteredRooms(rooms, filters) : rooms;
-    const filtersTitleStyle =
-        rooms.length !== filteredRooms.length
-            ? { fontWeight: '500', color: 'var(--orange-color' }
-            : {};
+    const filteredRooms = getFilteredRooms(rooms, filters);
+    const isFiltersActive = rooms.length !== filteredRooms.length;
+    const filtersTitleStyle = isFiltersActive
+        ? { fontWeight: '500', color: 'var(--orange-color' }
+        : {};
     const [currentPage, setCurrentPage] = useState(1);
     const [filtersClass, setFiltersClass] = useState('hidden');
     const handlePageChange = (page) => {
