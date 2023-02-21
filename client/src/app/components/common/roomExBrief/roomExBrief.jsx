@@ -114,7 +114,7 @@ const RoomExBrief = ({ id }) => {
                         />
                     </div>
                     <div className={classes.description}>
-                        <h1 className={classes.roomTitle}>{room.name}</h1>
+                        <Link to={`rooms/${room._id}`}><h1 className={classes.roomTitle}>{room.name}</h1></Link>
                         {isAdmin && (
                             <>
                                 <h2 className={classes.userTitle}>
