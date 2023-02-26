@@ -18,11 +18,10 @@ const ProtectedRoute = ({ component: Component, children, ...rest }) => {
                             }}
                         />
                     );
-                } else if (
-                    (!isAdmin &&
-                        props.location.pathname === '/admin') ||
-                    (isAdmin &&
-                        props.location.pathname === '/booking')
+                }
+                if (
+                    (!isAdmin && props.location.pathname === '/admin') ||
+                    (isAdmin && props.location.pathname === '/booking')
                 ) {
                     return <Redirect to='/rooms' />;
                 } else {

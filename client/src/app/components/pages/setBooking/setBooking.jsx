@@ -11,21 +11,23 @@ import SpaceDiv from '../../common/spaceDiv';
 import { useBookings } from '../../../hooks/useBookings';
 import { useAuth } from '../../../hooks/useAuth';
 import { useRooms } from '../../../hooks/useRooms';
-import { resetBooking } from '../../../../redux/bookingReducer';
 import changePhone from '../../../utils/changePhone';
+import bookingsService from '../../../services/bookings.service';
+import { getBooking, resetBooking } from '../../../../redux/bookingReducer';
+import { addBooking } from '../../../../redux/bookingsReducer';
 import classes from './setBooking.module.css';
 
 moment.locale('ru');
 
 const SetBooking = () => {
+    const history = useHistory();
     const [userPhone, setUserPhone] = useState('');
     const dispatch = useDispatch();
-    const booking = useSelector((state) => state.booking);
-    const history = useHistory();
+    const booking = useSelector(getBooking());
     const { currentUser: user } = useAuth();
     const { roomId } = useParams();
     const room = useRooms().getRoomById(roomId);
-    const { getRoomBookings, createBooking } = useBookings();
+    const { getRoomBookings } = useBookings();
     const [roomBookings, setRoomBookings] = useState();
     useEffect(() => {
         if (Object.values(booking).some((item) => item === '')) {
@@ -61,9 +63,10 @@ const SetBooking = () => {
             status: 'ok'
         };
         try {
-            const booking = await createBooking(data);
+            const newBooking = await bookingsService.create(data);
+            dispatch(addBooking(newBooking));
             dispatch(resetBooking());
-            history.push('/success-booking/' + booking._id);
+            history.push('/success-booking/' + newBooking._id);
         } catch (e) {
             console.log(e.message);
         }

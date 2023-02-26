@@ -16,22 +16,6 @@
     font-size: 0.8rem;
 }
 
-.totalDelete {
-    position: absolute;
-    bottom: 0;
-    right: 5px;
-    padding: 0 6px 2px;
-    font-size: 0.8rem;
-    background-color: var(--total-delete);
-    opacity: 0.6;
-    color: var(--base-bg-color);
-    cursor: pointer;
-}
-
-.totalDelete:hover {
-    opacity: 1;
-}
-
 .upcoming {
     background-color: var(--upcoming);
 }
@@ -115,7 +99,9 @@
 .editWrap {
     margin-top: 10px;
 }
-.edit {
+.editBooking,
+.cancelBooking,
+.deleteBooking {
     font-size: 0.95rem;
     cursor: pointer;
     padding: 3px 8px 5px;
@@ -124,17 +110,23 @@
     border: 1px solid transparent;
     width: fit-content;
 }
-.edit:hover {
+.editBooking:hover,
+.cancelBooking:hover,
+.deleteBooking:hover {
     background-color: var(--base-bg-color);
     border-color: var(--light-beige-color);
+}
+
+.editBooking {
+    color: var(--semi-orange-color);
 }
 
 .cancelBooking {
     color: var(--orange-color);
 }
 
-.editBooking {
-    color: var(--semi-orange-color);
+.deleteBooking {
+    color: var(--dark-orange-color);
 }
 
 @media screen and (max-width: 480px) {

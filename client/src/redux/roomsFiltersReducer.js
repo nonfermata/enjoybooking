@@ -7,8 +7,8 @@ export const initialState = {
     bathroom: { isActive: false }
 };
 
-const filtersSlice = createSlice({
-    name: 'filters',
+const roomsFiltersSlice = createSlice({
+    name: 'roomsFilters',
     initialState,
     reducers: {
         set(state, action) {
@@ -17,11 +17,11 @@ const filtersSlice = createSlice({
     }
 });
 
-const { set } = filtersSlice.actions;
-const filtersReducer = filtersSlice.reducer;
+const { set } = roomsFiltersSlice.actions;
+const roomsFiltersReducer = roomsFiltersSlice.reducer;
 
-export const applyFilters = (filters) => set(filters);
+export const applyRoomsFilters = (roomsFilters) => set(roomsFilters);
 
-export const getFilters = () => (state) => state.filters;
+export const getRoomsFilters = () => (state) => state.roomsFilters;
 
-export default filtersReducer;
+export default roomsFiltersReducer;

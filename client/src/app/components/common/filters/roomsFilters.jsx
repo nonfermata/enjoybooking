@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import CheckBoxField from '../../common/form/checkBoxField';
-import TextField from '../../common/form/textField';
-import Button from '../../common/button';
-import {
-    applyFilters,
-    getFilters,
-    initialState
-} from '../../../../redux/filtersReducer';
+import CheckBoxField from '../form/checkBoxField';
+import TextField from '../form/textField';
+import Button from '../button';
 import changeNumber from '../../../utils/changeNumber';
+import {
+    applyRoomsFilters,
+    getRoomsFilters,
+    initialState
+} from '../../../../redux/roomsFiltersReducer';
 import classes from './filters.module.css';
 
-const Filters = () => {
+const RoomsFilters = () => {
     const dispatch = useDispatch();
-    const storeData = useSelector(getFilters());
+    const storeData = useSelector(getRoomsFilters());
     const [filters, setFilters] = useState(storeData);
     const textFieldStyle = { padding: '7px', width: '50px' };
     const activeText = 'var(--base-color)';
@@ -38,7 +38,7 @@ const Filters = () => {
         setFilters(initialState);
     };
     useEffect(() => {
-        dispatch(applyFilters(filters));
+        dispatch(applyRoomsFilters(filters));
     }, [filters]);
 
     return (
@@ -127,4 +127,4 @@ const Filters = () => {
     );
 };
 
-export default Filters;
+export default RoomsFilters;

@@ -3,17 +3,17 @@ import { useSelector } from 'react-redux';
 import RoomBrief from '../../common/roomBrief/roomBrief';
 import Loader from '../../common/loader/loader';
 import Pagination from '../../common/pagination/pagination';
-import Filters from '../../ui/filters';
+import RoomsFilters from '../../common/filters/roomsFilters';
 import { paginate } from '../../../utils/paginate';
 import { useRooms } from '../../../hooks/useRooms';
-import { getFilters } from '../../../../redux/filtersReducer';
+import { getRoomsFilters } from '../../../../redux/roomsFiltersReducer';
 import getFilteredRooms from '../../../utils/getFilteredRooms';
 import cross from '../../common/svg/cross';
 import classes from './rooms.module.css';
 
 const Rooms = () => {
     const { rooms } = useRooms();
-    const filters = useSelector(getFilters());
+    const filters = useSelector(getRoomsFilters());
     const filteredRooms = getFilteredRooms(rooms, filters);
     const isFiltersActive = rooms.length !== filteredRooms.length;
     const filtersTitleStyle = isFiltersActive
@@ -59,7 +59,7 @@ const Rooms = () => {
                                 {cross}
                             </div>
                         </div>
-                        <Filters />
+                        <RoomsFilters />
                     </div>
                 </div>
                 <div className='mainTitle'>Наши номера</div>

@@ -24,6 +24,7 @@
     --peach-color: #dc8b51;
     --semi-orange-color: #ffb042;
     --orange-color: #ee7700;
+    --dark-orange-color: #d92400;
     --light-beige-border: 1px solid var(--light-beige-color);
     --semi-light-beige-border: 1px solid var(--semi-light-beige-color);
     --slider-button-bg: #80808066;
@@ -37,7 +38,6 @@
     --completed: #d5f2cb;
     --user-cacelled: #e3e5e5;
     --admin-cancelled: #e5dcda;
-    --total-delete: #a23f3f;
 }
 
 * {

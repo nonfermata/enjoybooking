@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import ProtectedRoute from '../components/common/protectedRoute';
-import routes from '../routes/routes';
-import protectedRoutes from '../routes/protectedRoutes';
+import ProtectedRoute from '../../components/common/protectedRoute';
+import routes from '../../routes/routes';
+import protectedRoutes from '../../routes/protectedRoutes';
 import classes from './main.module.css';
 
 const Main = () => {
