@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Loader from '../../common/loader/loader';
 import { useAuth } from '../../../hooks/useAuth';
-import { useDispatch } from 'react-redux';
 import { resetBookings } from '../../../../redux/bookingsReducer';
 
 const Logout = () => {

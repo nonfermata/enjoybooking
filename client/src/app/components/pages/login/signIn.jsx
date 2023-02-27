@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Button from '../../common/button';
 import TextField from '../../common/form/textField';
 import { useAuth } from '../../../hooks/useAuth';
 import validator from '../../../utils/validator';
+import { loadBookingsToStore } from '../../../../redux/bookingsReducer';
 import classes from './login.module.css';
 
 const SignIn = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
     const { signIn } = useAuth();
     const initialState = {
         email: '',
@@ -54,7 +57,8 @@ const SignIn = () => {
         event.preventDefault();
         if (!validate()) return;
         try {
-            await signIn(data);
+            const user = await signIn(data);
+            dispatch(loadBookingsToStore(user._id, user.type === 'admin'));
             history.push(
                 history.location.state
                     ? history.location.state.from.pathname

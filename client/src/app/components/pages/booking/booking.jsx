@@ -7,11 +7,11 @@ import Button from '../../common/button';
 import DateChoice from '../../common/dateChoice/dateChoice';
 import SelectField from '../../common/form/selectField';
 import SpaceDiv from '../../common/spaceDiv';
+import { personsForBooking as persons } from '../../../utils/getSelectFieldList';
 import {
     setBooking as setBookingToStore,
     getBooking
 } from '../../../../redux/bookingReducer';
-import { personsForBooking as persons } from '../../../utils/getSelectFieldList';
 import classes from './booking.module.css';
 moment.locale('ru');
 

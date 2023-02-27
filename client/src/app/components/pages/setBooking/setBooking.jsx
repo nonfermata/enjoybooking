@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/ru';
 import RoomBrief from '../../common/roomBrief/roomBrief';
@@ -11,16 +11,15 @@ import SpaceDiv from '../../common/spaceDiv';
 import { useBookings } from '../../../hooks/useBookings';
 import { useAuth } from '../../../hooks/useAuth';
 import { useRooms } from '../../../hooks/useRooms';
+import history from '../../../utils/history';
 import changePhone from '../../../utils/changePhone';
-import bookingsService from '../../../services/bookings.service';
 import { getBooking, resetBooking } from '../../../../redux/bookingReducer';
-import { addBooking } from '../../../../redux/bookingsReducer';
+import { createBooking } from '../../../../redux/bookingsReducer';
 import classes from './setBooking.module.css';
 
 moment.locale('ru');
 
 const SetBooking = () => {
-    const history = useHistory();
     const [userPhone, setUserPhone] = useState('');
     const dispatch = useDispatch();
     const booking = useSelector(getBooking());
@@ -55,21 +54,15 @@ const SetBooking = () => {
         setUserPhone(changePhone(value));
     };
 
-    const handleSubmitBooking = async () => {
+    const handleSubmitBooking = () => {
         const data = {
             ...booking,
             roomId,
             userPhone,
             status: 'ok'
         };
-        try {
-            const newBooking = await bookingsService.create(data);
-            dispatch(addBooking(newBooking));
-            dispatch(resetBooking());
-            history.push('/success-booking/' + newBooking._id);
-        } catch (e) {
-            console.log(e.message);
-        }
+        dispatch(createBooking(data));
+        dispatch(resetBooking());
     };
     if (roomBookings) {
         if (!errorBookingMessage()) {

@@ -33,8 +33,9 @@ const AuthProvider = ({ children }) => {
             const data = await usersService.getCurrentUser();
             await setUser(data);
             if (data) {
-                setIsAdmin(data.type === 'admin');
+                await setIsAdmin(data.type === 'admin');
             }
+            return data;
         } catch (e) {
             errorCatcher(e);
         } finally {
@@ -95,17 +96,18 @@ const AuthProvider = ({ children }) => {
         try {
             const data = await authService.login(email, password);
             localStorageService.setTokens(data);
-            await getUserData();
+            return await getUserData();
         } catch (e) {
             errorCatcher(e);
             const { code, message } = e.response.data.error;
             if (code === 400) {
                 switch (message) {
-                    case 'INVALID_PASSWORD' || 'EMAIL_NOT_FOUND':
+                    case 'INVALID_PASSWORD':
+                    case 'EMAIL_NOT_FOUND':
                         throw new Error('Неверная пара e-mail – пароль!');
                     default:
                         throw new Error(
-                            'Слишком много попыток входа! Побробуйте позднее.'
+                            'Некорректный ввод!'
                         );
                 }
             }

@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import onAppClickReducer from './onAppClickReducer';
 import bookingReducer from './bookingReducer';
 import bookingsReducer from './bookingsReducer';
-import onAppClickReducer from './onAppClickReducer';
 import roomsFiltersReducer from './roomsFiltersReducer';
 import bookingsFiltersReducer from './bookingsFiltersReducer';
 

@@ -1,9 +1,9 @@
 /* eslint-disable indent */
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import configFile from '../config.json';
 import authService from './auth.service';
 import localStorageService from './localStorage.service';
+import configFile from '../config.json';
 
 const http = axios.create({
     baseURL: configFile.apiEndpoint

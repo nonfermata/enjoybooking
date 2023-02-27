@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useAuth } from '../../../../hooks/useAuth';
+import { onAppClicked } from '../../../../../redux/onAppClickReducer';
 import burger from '../../../common/svg/burger';
 import closeMenu from '../../../common/svg/closeMenu';
 import menu from '../../../../data/menu';
-import { onAppClicked } from '../../../../../redux/onAppClickReducer';
 import classes from './navbarBurger.module.css';
 
 const NavbarBurger = () => {

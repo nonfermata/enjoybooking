@@ -4,10 +4,10 @@ import RoomBrief from '../../common/roomBrief/roomBrief';
 import Loader from '../../common/loader/loader';
 import Pagination from '../../common/pagination/pagination';
 import RoomsFilters from '../../common/filters/roomsFilters';
-import { paginate } from '../../../utils/paginate';
 import { useRooms } from '../../../hooks/useRooms';
-import { getRoomsFilters } from '../../../../redux/roomsFiltersReducer';
+import { paginate } from '../../../utils/paginate';
 import getFilteredRooms from '../../../utils/getFilteredRooms';
+import { getRoomsFilters } from '../../../../redux/roomsFiltersReducer';
 import cross from '../../common/svg/cross';
 import classes from './rooms.module.css';
 
