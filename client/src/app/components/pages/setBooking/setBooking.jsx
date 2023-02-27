@@ -54,14 +54,14 @@ const SetBooking = () => {
         setUserPhone(changePhone(value));
     };
 
-    const handleSubmitBooking = () => {
+    const handleSubmitBooking = async () => {
         const data = {
             ...booking,
             roomId,
             userPhone,
             status: 'ok'
         };
-        dispatch(createBooking(data));
+        await dispatch(createBooking(data));
         dispatch(resetBooking());
     };
     if (roomBookings) {
